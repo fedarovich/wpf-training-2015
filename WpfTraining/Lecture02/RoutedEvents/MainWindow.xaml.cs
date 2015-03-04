@@ -35,19 +35,19 @@ namespace RoutedEvents
 
         private void OnButton3Click(object sender, RoutedEventArgs e)
         {
+            e.Handled = true;
             EventLog.Add(CreateViewModel(sender, e));
         }
 
         private void OnButton4Click(object sender, RoutedEventArgs e)
         {
-            e.Handled = true;
             EventLog.Add(CreateViewModel(sender, e));
         }
 
         private void OnUniformGridButtonClick(object sender, RoutedEventArgs e)
         {
             var button = (Button) e.Source;
-            if (button.Name == "button3")
+            if (button.Name == "button2")
             {
                 e.Handled = true;
             }
