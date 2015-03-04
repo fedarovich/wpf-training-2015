@@ -1,0 +1,30 @@
+﻿<Window x:Class="RoutedCommands.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" Executed="OnOpenCommandExecuted" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="Open" Gesture="Ctrl+O"/>
+    </Window.InputBindings>
+    
+    <StackPanel>
+        <StackPanel.CommandBindings>
+            <CommandBinding Command="Save" Executed="OnSaveCommandExecuted" CanExecute="OnSaveCommandCanExecute" />
+        </StackPanel.CommandBindings>
+        <StackPanel.InputBindings>
+            <KeyBinding Command="Save" Gesture="Ctrl+S" />
+        </StackPanel.InputBindings>
+        
+        <TextBlock Margin="5" FontSize="20">
+            <Run Text="Is opened: " />
+            <Run Text="{Binding IsOpened, RelativeSource={RelativeSource AncestorType=Window}, Mode=OneWay}" />
+        </TextBlock>
+        <Button Content="New" Command="New" Margin="5" />
+        <Button Content="Open" Command="Open" Margin="5" />
+        <Button Content="Save" Command="Save" Margin="5" />
+        <Button Content="Print" Command="Print" Margin="5" />
+        <Button Content="Close" Command="Close" Margin="5" />
+    </StackPanel>
+</Window>
