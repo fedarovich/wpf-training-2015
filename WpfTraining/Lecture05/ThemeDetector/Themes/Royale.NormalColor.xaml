@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ThemeDetector">
+    <Style TargetType="{x:Type local:Detector}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:Detector}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <StackPanel>
+                            <TextBlock>
+                                <Run Text="Resource Dictionary:" />
+                                <Run Text="Royale.NormalColor.xaml" />
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="UX Theme Name:" />
+                                <Run Text="{x:Static SystemParameters.UxThemeName}" />
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="UX Theme Color:" />
+                                <Run Text="{x:Static SystemParameters.UxThemeColor}" />
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
