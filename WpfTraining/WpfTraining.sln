@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lecture 05", "Lecture 05", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeDetector", "Lecture05\ThemeDetector\ThemeDetector.csproj", "{585677FC-A946-4AED-B777-4B38B0B6FC94}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lecture 04", "Lecture 04", "{D616D4CD-A1C5-4FCF-8EAA-5C906C006C5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMarkupExtensions", "Lecture04\CustomMarkupExtensions\CustomMarkupExtensions.csproj", "{AD1228E8-8D56-45AF-A919-84E88E912038}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +75,10 @@ Global
 		{585677FC-A946-4AED-B777-4B38B0B6FC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{585677FC-A946-4AED-B777-4B38B0B6FC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{585677FC-A946-4AED-B777-4B38B0B6FC94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD1228E8-8D56-45AF-A919-84E88E912038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1228E8-8D56-45AF-A919-84E88E912038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1228E8-8D56-45AF-A919-84E88E912038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1228E8-8D56-45AF-A919-84E88E912038}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,5 +93,6 @@ Global
 		{E09A4EE9-A372-4009-89E9-4A6BC1FD1725} = {FC278E4C-9C0A-4CF4-852F-107E8D0BE38B}
 		{9DB8459A-6082-4E15-B2ED-1BE24230871A} = {7DA44E4E-4D73-4660-9E50-02D2B01CCA41}
 		{585677FC-A946-4AED-B777-4B38B0B6FC94} = {71FC7BC3-5955-4708-941D-31167FD1F426}
+		{AD1228E8-8D56-45AF-A919-84E88E912038} = {D616D4CD-A1C5-4FCF-8EAA-5C906C006C5B}
 	EndGlobalSection
 EndGlobal
