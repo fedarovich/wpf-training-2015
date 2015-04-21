@@ -61,6 +61,15 @@ namespace CustomMarkupExtensions.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hello, Dynamic Localization..
+        /// </summary>
+        internal static string DynamicString {
+            get {
+                return ResourceManager.GetString("DynamicString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hello, Static Localization..
         /// </summary>
         internal static string StaticString {

@@ -1,14 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace CustomMarkupExtensions
 {
-    public static class LocalizationManager
+    public class LocalizationManager : INotifyPropertyChanged
     {
-        private static CultureInfo _currentUiCulture = CultureInfo.GetCultureInfo("en-US");
+        private static readonly LocalizationManager instance = new LocalizationManager();
+        private CultureInfo currentUiCulture = CultureInfo.GetCultureInfo("en-US");
 
-        public static IEnumerable<CultureInfo> Cultures
+#region Constructors
+
+        private LocalizationManager()
+        {
+        }
+
+        static LocalizationManager()
+        {
+        }
+
+#endregion
+
+        public static LocalizationManager Instance
+        {
+            get { return instance; }
+        }
+
+        public IEnumerable<CultureInfo> Cultures
         {
             get
             {
@@ -17,16 +37,28 @@ namespace CustomMarkupExtensions
             }
         }
 
-        public static CultureInfo CurrentUICulture
+        public CultureInfo CurrentUICulture
         {
-            get { return _currentUiCulture; }
+            get { return currentUiCulture; }
             set
             {
-                _currentUiCulture = value;
-                CurrentUICultureChanged(null, EventArgs.Empty);
+                currentUiCulture = value;
+                OnPropertyChanged();
+                OnPropertyChanged("Item[]");
             }
         }
 
-        public static event EventHandler CurrentUICultureChanged = delegate {};
+        public string this[string key]
+        {
+            get { return Properties.Resources.ResourceManager.GetString(key, CurrentUICulture); }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
