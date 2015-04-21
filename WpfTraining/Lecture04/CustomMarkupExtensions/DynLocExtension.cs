@@ -1,24 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Data;
 using System.Windows.Markup;
 
 namespace CustomMarkupExtensions
 {
     public class DynLocExtension : MarkupExtension
     {
-        private readonly string _key;
+        private readonly string key;
 
         public DynLocExtension(string key)
         {
-            _key = key;
+            this.key = key;
         }
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            throw new NotImplementedException();
+            var path = "[" + key + "]";
+            var binding = new Binding(path)
+            {
+                Source = LocalizationManager.Instance,
+                Mode = BindingMode.OneWay
+            };
+            return binding.ProvideValue(serviceProvider);
         }
     }
 }
