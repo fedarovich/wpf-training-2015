@@ -72,6 +72,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="EventToCommandExtension.cs" />
+    <Compile Include="ViewModelBindingExtension.cs" />
     <Compile Include="ViewModels\EventToCommandViewModel.cs" />
     <Compile Include="Views\DynamicLocalization.xaml.cs">
       <DependentUpon>DynamicLocalization.xaml</DependentUpon>
