@@ -74,6 +74,10 @@
     <Compile Include="EventToCommandExtension.cs" />
     <Compile Include="ViewModelBindingExtension.cs" />
     <Compile Include="ViewModels\EventToCommandViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBindingViewModel.cs" />
+    <Compile Include="Views\ViewModelBinding.xaml.cs">
+      <DependentUpon>ViewModelBinding.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DynamicLocalization.xaml.cs">
       <DependentUpon>DynamicLocalization.xaml</DependentUpon>
     </Compile>
@@ -83,6 +87,10 @@
     <Compile Include="Views\StaticLocalization.xaml.cs">
       <DependentUpon>StaticLocalization.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\ViewModelBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DynamicLocalization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
