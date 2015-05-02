@@ -1,0 +1,50 @@
+﻿<Window x:Class="MultiBindings.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:multiBindings="clr-namespace:MultiBindings"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <multiBindings:SumConverter x:Key="SumConverter"/>
+    </Window.Resources>
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" Content="A = " />
+        <TextBox Grid.Row="0" Grid.Column="2" Name="A"/>
+        
+        <Label Grid.Row="2" Grid.Column="0" Content="B = " />
+        <TextBox Grid.Row="2" Grid.Column="2" Name="B"/>
+        
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal">
+            <TextBlock>
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="{}{0} + {1} = ">
+                        <Binding ElementName="A" Path="Text"/>
+                        <Binding ElementName="B" Path="Text"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+            
+            <ContentControl>
+                <ContentControl.Content>
+                    <MultiBinding Converter="{StaticResource SumConverter}" FallbackValue="[Not a Number]">
+                        <Binding ElementName="A" Path="Text"/>
+                        <Binding ElementName="B" Path="Text"/>
+                    </MultiBinding>
+                </ContentControl.Content>
+            </ContentControl>
+        </StackPanel>
+    </Grid>
+</Window>

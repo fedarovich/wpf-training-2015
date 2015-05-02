@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="BindingSources.Views.ElementNameParentSample"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:BindingSources.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             Name="root">
+    <UserControl.DataContext>
+        <viewModels:ParentViewModel />
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Names}"
+                 HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <Button Content="Remove" DockPanel.Dock="Right" Padding="10,2" Margin="1"
+                                Command="{Binding DataContext.RemoveCommand, ElementName=root}" 
+                                CommandParameter="{Binding}" />
+                        <TextBlock Text="{Binding}" VerticalAlignment="Center" />
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding NewName, UpdateSourceTrigger=PropertyChanged}" />
+        <Button Grid.Row="1" Grid.Column="1" Content="Add" Padding="30,5" Command="{Binding AddCommand}" />
+    </Grid>
+</UserControl>
