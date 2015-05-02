@@ -1,0 +1,32 @@
+﻿<Window x:Class="Containers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:containers="clr-namespace:Containers"
+        Title="MainWindow" Height="500" Width="700">
+    <TabControl>
+        <TabItem Header="Canvas">
+            <containers:CanvasSample />
+        </TabItem>
+        <TabItem Header="StackPanel">
+            <containers:StackPanelSample />
+        </TabItem>
+        <TabItem Header="WrapPanel">
+            <containers:WrapPanelSample />
+        </TabItem>
+        <TabItem Header="DockPanel">
+            <containers:DockPanelSample />
+        </TabItem>
+        <TabItem Header="UniformGrid">
+            <containers:UniformGridSample />
+        </TabItem>
+        <TabItem Header="Grid">
+            <containers:GridSample />
+        </TabItem>
+        <TabItem Header="Grid (Shared Size Scope)">
+            <containers:GridSharedSizeScopeSample />
+        </TabItem>
+        <TabItem Header="Grid (Splitter)">
+            <containers:GridSplitterSample />
+        </TabItem>
+    </TabControl>
+</Window>
