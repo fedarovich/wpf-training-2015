@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Trees.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525"
+        Title="Trees" Height="350" Width="525"
         xmlns:system="clr-namespace:System;assembly=mscorlib">
     <DockPanel Margin="5">
         <UniformGrid Columns="2" DockPanel.Dock="Bottom">

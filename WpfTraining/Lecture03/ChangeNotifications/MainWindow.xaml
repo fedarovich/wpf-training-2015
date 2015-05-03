@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:views="clr-namespace:ChangeNotifications.Views"
-        Title="MainWindow" Height="350" Width="525"
+        Title="Change Notifications" Height="350" Width="525"
         Grid.IsSharedSizeScope="True">
     <StackPanel Margin="5">
         <Label Content="Instance:"/>
