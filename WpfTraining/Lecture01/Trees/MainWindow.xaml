@@ -1,0 +1,29 @@
+﻿<Window x:Class="Trees.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525"
+        xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <DockPanel Margin="5">
+        <UniformGrid Columns="2" DockPanel.Dock="Bottom">
+            <Button Content="Show Visual Tree" Margin="5" Click="ShowVisualTree" />
+            <Button Content="Show Logical Tree" Margin="5" Click="ShowLogicalTree" />
+        </UniformGrid>
+        <GroupBox Header="Test Area" Margin="5">
+            <ListBox Margin="10">
+                <ListBoxItem>Simple text</ListBoxItem>
+                <ListBoxItem>
+                    <Label>Label</Label>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Text with " VerticalAlignment="Center"/>
+                        <Button>Button</Button>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <system:Int32>100</system:Int32>
+                </ListBoxItem>
+            </ListBox>
+        </GroupBox>
+    </DockPanel>
+</Window>
