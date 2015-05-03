@@ -1,0 +1,63 @@
+﻿<Window x:Class="DataFiles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Content="application:///" />
+        <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Content="Relative Rooted" />
+        <Label Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" Content="Relative" />
+        <Label Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center" Content="siteoforigin:///" />
+        <Label Grid.Row="0" Grid.Column="5" HorizontalAlignment="Center" Content="http://" />
+        
+        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Content="Resource" />
+        <Image Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="pack://application:,,,/Files/resource.png" />
+        <Image Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="/Files/resource.png" />
+        <Image Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="Files/resource.png" />
+        <Image Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="pack://siteoforigin:,,,/Files/resource.png" />
+        
+        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Content="Content" />
+        <Image Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="pack://application:,,,/Files/content.png" />
+        <Image Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="/Files/content.png" />
+        <Image Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="Files/content.png" />
+        <Image Grid.Row="2" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="pack://siteoforigin:,,,/Files/content.png" />
+        
+        <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Content="Site of Origin" />
+        <Image Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="pack://application:,,,/Files/SiteOfOrigin.png" />
+        <Image Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="/Files/SiteOfOrigin.png" />
+        <Image Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="Files/SiteOfOrigin.png" />
+        <Image Grid.Row="3" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="pack://siteoforigin:,,,/Files/SiteOfOrigin.png" />
+
+        <Label Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Content="Web" />
+        <Image Grid.Row="4" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Source="https://cdn2.iconfinder.com/data/icons/crystalproject/128x128/filesystems/Globe.png" />
+    </Grid>
+</Window>
