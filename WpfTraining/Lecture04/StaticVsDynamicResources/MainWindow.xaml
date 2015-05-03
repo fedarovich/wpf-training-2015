@@ -1,7 +1,7 @@
 ﻿<Window x:Class="StaticVsDynamicResources.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="600">
+        Title="StaticResource vs DynamicResource" Height="350" Width="600">
     <Window.Resources>
         <SolidColorBrush x:Key="MyBrush" Color="Red" />
     </Window.Resources>
