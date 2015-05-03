@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="Dictionary1Brush" Color="LightPink" />
+    <SolidColorBrush x:Key="BothDictionariesBrush" Color="LightPink" />
+    <SolidColorBrush x:Key="PrimaryDictionaryBrush" Color="LightPink" />
+</ResourceDictionary>

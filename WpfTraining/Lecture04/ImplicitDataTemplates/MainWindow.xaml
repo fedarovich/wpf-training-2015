@@ -1,0 +1,53 @@
+﻿<Window x:Class="ImplicitDataTemplates.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:idt="clr-namespace:ImplicitDataTemplates"
+        Title="Implicit Data Templates" Height="350" Width="525">
+    <Window.Resources>
+        
+        <DataTemplate DataType="{x:Type idt:LeftItem}">
+            <Border BorderThickness="1" BorderBrush="Red" HorizontalAlignment="Left"
+                    Padding="20,2" Margin="1">
+                <TextBlock Text="{Binding Index, StringFormat={}Left {0}}" />
+            </Border>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type idt:CenteredItem}">
+            <Border BorderThickness="1" BorderBrush="Green" HorizontalAlignment="Center"
+                    Padding="20,2" Margin="1">
+                <TextBlock Text="{Binding Index, StringFormat={}Centered {0}}" />
+            </Border>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type idt:RightItem}">
+            <Border BorderThickness="1" BorderBrush="Blue" HorizontalAlignment="Right"
+                    Padding="20,2" Margin="1">
+                <TextBlock Text="{Binding Index, StringFormat={}Centered {0}}" />
+            </Border>
+        </DataTemplate>
+        
+    </Window.Resources>
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <ListBox Grid.ColumnSpan="5" 
+            ItemsSource="{Binding Items, RelativeSource={RelativeSource AncestorType=Window}}"
+            HorizontalContentAlignment="Stretch" />
+        
+        <Button Grid.Row="2" Grid.Column="0" Content="Add Left" Click="AddLeft" />
+        <Button Grid.Row="2" Grid.Column="2" Content="Add Center" Click="AddCentered" />
+        <Button Grid.Row="2" Grid.Column="4" Content="Add Right" Click="AddRight" />
+    </Grid>
+</Window>
