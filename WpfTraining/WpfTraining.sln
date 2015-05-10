@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.22823.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "Lecture01\HelloWorld\HelloWorld.csproj", "{D099091E-37FF-468B-9B1C-CD29C25A0AE5}"
 EndProject
@@ -73,6 +73,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveInputBinding", "Lecture02\RemoveInputBinding\RemoveInputBinding.csproj", "{C9F74A2D-E3F5-44CF-B927-5EFEB4521C68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentControls", "Lecture02\ContentControls\ContentControls.csproj", "{E726D068-65C7-402B-9876-210408469ABF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonTemplateWithTriggers", "Lecture05\ButtonTemplateWithTriggers\ButtonTemplateWithTriggers.csproj", "{FFE9F414-9692-40CA-AB1E-6160B71E6390}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonTemplateWithVsm", "Lecture05\ButtonTemplateWithVsm\ButtonTemplateWithVsm.csproj", "{1532D106-A70F-4E41-AD3B-D5651120D9F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -184,6 +188,14 @@ Global
 		{E726D068-65C7-402B-9876-210408469ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E726D068-65C7-402B-9876-210408469ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E726D068-65C7-402B-9876-210408469ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFE9F414-9692-40CA-AB1E-6160B71E6390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE9F414-9692-40CA-AB1E-6160B71E6390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE9F414-9692-40CA-AB1E-6160B71E6390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE9F414-9692-40CA-AB1E-6160B71E6390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1532D106-A70F-4E41-AD3B-D5651120D9F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1532D106-A70F-4E41-AD3B-D5651120D9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1532D106-A70F-4E41-AD3B-D5651120D9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1532D106-A70F-4E41-AD3B-D5651120D9F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -215,5 +227,7 @@ Global
 		{8348680F-03D6-4F6F-B77A-CF68BC9DBBEA} = {D616D4CD-A1C5-4FCF-8EAA-5C906C006C5B}
 		{C9F74A2D-E3F5-44CF-B927-5EFEB4521C68} = {FC278E4C-9C0A-4CF4-852F-107E8D0BE38B}
 		{E726D068-65C7-402B-9876-210408469ABF} = {FC278E4C-9C0A-4CF4-852F-107E8D0BE38B}
+		{FFE9F414-9692-40CA-AB1E-6160B71E6390} = {71FC7BC3-5955-4708-941D-31167FD1F426}
+		{1532D106-A70F-4E41-AD3B-D5651120D9F5} = {71FC7BC3-5955-4708-941D-31167FD1F426}
 	EndGlobalSection
 EndGlobal
