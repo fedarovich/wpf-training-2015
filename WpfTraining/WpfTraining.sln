@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "Lecture01\HelloWorld\HelloWorld.csproj", "{D099091E-37FF-468B-9B1C-CD29C25A0AE5}"
 EndProject
@@ -69,6 +69,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentResourceKeys", "Lecture04\ComponentResourceKeys\ComponentResourceKeys.csproj", "{CA0E2A3A-D59C-4DA2-B918-38DE1370BACC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFiles", "Lecture04\DataFiles\DataFiles.csproj", "{8348680F-03D6-4F6F-B77A-CF68BC9DBBEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveInputBinding", "Lecture02\RemoveInputBinding\RemoveInputBinding.csproj", "{C9F74A2D-E3F5-44CF-B927-5EFEB4521C68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentControls", "Lecture02\ContentControls\ContentControls.csproj", "{E726D068-65C7-402B-9876-210408469ABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -172,6 +176,14 @@ Global
 		{8348680F-03D6-4F6F-B77A-CF68BC9DBBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8348680F-03D6-4F6F-B77A-CF68BC9DBBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8348680F-03D6-4F6F-B77A-CF68BC9DBBEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9F74A2D-E3F5-44CF-B927-5EFEB4521C68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F74A2D-E3F5-44CF-B927-5EFEB4521C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F74A2D-E3F5-44CF-B927-5EFEB4521C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F74A2D-E3F5-44CF-B927-5EFEB4521C68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E726D068-65C7-402B-9876-210408469ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E726D068-65C7-402B-9876-210408469ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E726D068-65C7-402B-9876-210408469ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E726D068-65C7-402B-9876-210408469ABF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -201,5 +213,7 @@ Global
 		{CE3960B7-FC81-4248-B895-C4A231468771} = {D616D4CD-A1C5-4FCF-8EAA-5C906C006C5B}
 		{CA0E2A3A-D59C-4DA2-B918-38DE1370BACC} = {D616D4CD-A1C5-4FCF-8EAA-5C906C006C5B}
 		{8348680F-03D6-4F6F-B77A-CF68BC9DBBEA} = {D616D4CD-A1C5-4FCF-8EAA-5C906C006C5B}
+		{C9F74A2D-E3F5-44CF-B927-5EFEB4521C68} = {FC278E4C-9C0A-4CF4-852F-107E8D0BE38B}
+		{E726D068-65C7-402B-9876-210408469ABF} = {FC278E4C-9C0A-4CF4-852F-107E8D0BE38B}
 	EndGlobalSection
 EndGlobal
