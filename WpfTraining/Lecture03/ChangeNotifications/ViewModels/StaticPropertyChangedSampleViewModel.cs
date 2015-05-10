@@ -35,7 +35,7 @@ namespace ChangeNotifications.ViewModels
             var handler = StaticPropertyChanged;
             if (handler != null)
             {
-                StaticPropertyChanged(null, new PropertyChangedEventArgs(propertyName));
+                handler(null, new PropertyChangedEventArgs(propertyName));
             }
         }
 
