@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "Lecture01\HelloWorld\HelloWorld.csproj", "{D099091E-37FF-468B-9B1C-CD29C25A0AE5}"
 EndProject
@@ -77,6 +77,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonTemplateWithTriggers", "Lecture05\ButtonTemplateWithTriggers\ButtonTemplateWithTriggers.csproj", "{FFE9F414-9692-40CA-AB1E-6160B71E6390}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonTemplateWithVsm", "Lecture05\ButtonTemplateWithVsm\ButtonTemplateWithVsm.csproj", "{1532D106-A70F-4E41-AD3B-D5651120D9F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleStyles", "Lecture05\SimpleStyles\SimpleStyles.csproj", "{7BF849B1-8CF5-48C6-BFCC-7126A803DDD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefaultStyles", "Lecture05\DefaultStyles\DefaultStyles.csproj", "{F83753F0-22E4-4F6B-9D8E-45585A8103AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animation", "Lecture05\Animation\Animation.csproj", "{52FFEB7A-8789-4A71-A7C8-E018DBDF0CDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -196,6 +202,18 @@ Global
 		{1532D106-A70F-4E41-AD3B-D5651120D9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1532D106-A70F-4E41-AD3B-D5651120D9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1532D106-A70F-4E41-AD3B-D5651120D9F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BF849B1-8CF5-48C6-BFCC-7126A803DDD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF849B1-8CF5-48C6-BFCC-7126A803DDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF849B1-8CF5-48C6-BFCC-7126A803DDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF849B1-8CF5-48C6-BFCC-7126A803DDD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83753F0-22E4-4F6B-9D8E-45585A8103AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83753F0-22E4-4F6B-9D8E-45585A8103AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83753F0-22E4-4F6B-9D8E-45585A8103AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83753F0-22E4-4F6B-9D8E-45585A8103AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52FFEB7A-8789-4A71-A7C8-E018DBDF0CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52FFEB7A-8789-4A71-A7C8-E018DBDF0CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52FFEB7A-8789-4A71-A7C8-E018DBDF0CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52FFEB7A-8789-4A71-A7C8-E018DBDF0CDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -229,5 +247,8 @@ Global
 		{E726D068-65C7-402B-9876-210408469ABF} = {FC278E4C-9C0A-4CF4-852F-107E8D0BE38B}
 		{FFE9F414-9692-40CA-AB1E-6160B71E6390} = {71FC7BC3-5955-4708-941D-31167FD1F426}
 		{1532D106-A70F-4E41-AD3B-D5651120D9F5} = {71FC7BC3-5955-4708-941D-31167FD1F426}
+		{7BF849B1-8CF5-48C6-BFCC-7126A803DDD8} = {71FC7BC3-5955-4708-941D-31167FD1F426}
+		{F83753F0-22E4-4F6B-9D8E-45585A8103AA} = {71FC7BC3-5955-4708-941D-31167FD1F426}
+		{52FFEB7A-8789-4A71-A7C8-E018DBDF0CDA} = {71FC7BC3-5955-4708-941D-31167FD1F426}
 	EndGlobalSection
 EndGlobal

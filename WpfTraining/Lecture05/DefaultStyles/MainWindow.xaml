@@ -1,0 +1,49 @@
+﻿<Window x:Class="DefaultStyles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ds="clr-namespace:DefaultStyles"
+        Title="Default Styles" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="ds:MyControl" x:Key="Style1">
+            <Setter Property="Text" Value="Style 1 Text" />
+        </Style>
+
+        <Style TargetType="ds:MyControl" x:Key="Style2">
+            <Setter Property="Background" Value="Yellow" />
+        </Style>
+
+        <Style TargetType="ds:MyControl" x:Key="Style3">
+            <!-- OverridesDefaultStyle makes the control ignore the values set in the default style. -->
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+
+            <Setter Property="MinHeight" Value="20" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ds:MyControl">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Padding="{TemplateBinding Padding}">
+
+                            <TextBlock Text="{TemplateBinding Text}" 
+                                Foreground="{TemplateBinding Foreground}"  TextAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ds:MyControl" x:Key="Style4" BasedOn="{StaticResource Style3}">
+            <Setter Property="Text" Value="Style 4 Text" />
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+        <ds:MyControl />
+        <ds:MyControl Style="{StaticResource Style1}" />
+        <ds:MyControl Style="{StaticResource Style2}" />
+        <ds:MyControl Style="{StaticResource Style3}" />
+        <ds:MyControl Style="{StaticResource Style4}" />
+    </StackPanel>
+</Window>
