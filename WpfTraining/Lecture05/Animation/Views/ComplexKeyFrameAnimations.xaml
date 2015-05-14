@@ -123,6 +123,36 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:7.1" Value="115"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:7.5" Value="61"/>
             </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ellipse">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="80"/>
+            	<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1777">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<QuadraticEase EasingMode="EaseIn"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="1777"/>
+            	<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1777"/>
+            	<EasingDoubleKeyFrame KeyTime="0:0:4" Value="80">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<QuadraticEase EasingMode="EaseIn"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:4.1" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<ExponentialEase EasingMode="EaseOut" Exponent="3"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle2">
+            	<EasingDoubleKeyFrame KeyTime="0:0:7.1" Value="0"/>
+            	<EasingDoubleKeyFrame KeyTime="0:0:7.5" Value="-0.047"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle2">
+            	<EasingDoubleKeyFrame KeyTime="0:0:7.1" Value="0"/>
+            	<EasingDoubleKeyFrame KeyTime="0:0:7.5" Value="0.173"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
 
     </UserControl.Resources>
@@ -132,7 +162,15 @@
         </EventTrigger>
     </UserControl.Triggers>
     <Canvas>
-        <Ellipse x:Name="ellipse" Fill="#FFF4F4F5" Height="50" Canvas.Left="50" Stroke="Black" Canvas.Top="100" Width="50" RenderTransformOrigin="0.5,0.5">
+        <Ellipse x:Name="ellipse" Height="50" Canvas.Left="50" Stroke="Black" Canvas.Top="100" Width="50" RenderTransformOrigin="0.5,0.5">
+        	<Ellipse.Fill>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="Red" Offset="0"/>
+        			<GradientStop Color="#FF003CDC" Offset="1"/>
+        			<GradientStop Color="#FFE8FF00" Offset="0.332"/>
+        			<GradientStop Color="#FF25FF25" Offset="0.668"/>
+        		</LinearGradientBrush>
+        	</Ellipse.Fill>
             <Ellipse.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -142,7 +180,7 @@
                 </TransformGroup>
             </Ellipse.RenderTransform>
         </Ellipse>
-        <Rectangle x:Name="rectangle4" Fill="#FFF4F4F5" Height="10" Canvas.Left="10" Stroke="Black" Canvas.Top="150" Width="100" RenderTransformOrigin="0.072,0.5">
+        <Rectangle x:Name="rectangle4" Fill="#FFBBBBBB" Height="10" Canvas.Left="10" Stroke="Black" Canvas.Top="150" Width="100" RenderTransformOrigin="0.072,0.5" RadiusX="3" RadiusY="3">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -152,7 +190,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle Fill="#FFF4F4F5" Height="10" Canvas.Left="107" Stroke="Black" Canvas.Top="186" Width="700" RenderTransformOrigin="0.5,0.5">
+        <Rectangle Fill="#FFBBBBBB" Height="10" Canvas.Left="107" Stroke="Black" Canvas.Top="186" Width="700" RenderTransformOrigin="0.5,0.5" RadiusX="3" RadiusY="3">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -162,7 +200,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle x:Name="rectangle1" Fill="#FFF4F4F5" Height="10" Canvas.Left="804.976" Stroke="Black" Canvas.Top="223.083" Width="40" RenderTransformOrigin="0.133,0.5">
+        <Rectangle x:Name="rectangle1" Fill="#FFBBBBBB" Height="10" Canvas.Left="804.976" Stroke="Black" Canvas.Top="223.083" Width="40" RenderTransformOrigin="0.133,0.5" RadiusX="3" RadiusY="3">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -172,7 +210,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle x:Name="rectangle2" Fill="#FFF4F4F5" Height="10" Canvas.Left="844" Stroke="Black" Canvas.Top="230" Width="40" RenderTransformOrigin="0.833,0.5">
+        <Rectangle x:Name="rectangle2" Fill="#FFBBBBBB" Height="10" Canvas.Left="844" Stroke="Black" Canvas.Top="230" Width="40" RenderTransformOrigin="0.875,0.534" RadiusX="3" RadiusY="3">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -182,7 +220,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle Fill="#FFF4F4F5" Height="56" Canvas.Left="862" Stroke="Black" Canvas.Top="154" Width="10" RenderTransformOrigin="0.5,0.5">
+        <Rectangle Fill="#FFBBBBBB" Height="56" Canvas.Left="862" Stroke="Black" Canvas.Top="154" Width="10" RenderTransformOrigin="0.5,0.5" RadiusX="3" RadiusY="3">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -192,7 +230,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle x:Name="rectangle" Fill="#FFF4F4F5" Height="10" Canvas.Left="10" Stroke="Black" Canvas.Top="120" Width="31" RenderTransformOrigin="0.5,0.5">
+        <Rectangle x:Name="rectangle" Fill="#FFBBBBBB" Height="10" Canvas.Left="10" Stroke="Black" Canvas.Top="120" Width="31" RenderTransformOrigin="0.5,0.5" RadiusX="3" RadiusY="3">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -202,7 +240,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle Fill="#FFF4F4F5" Height="10" Canvas.Left="100" Stroke="Black" Canvas.Top="517" Width="700" RenderTransformOrigin="0.5,0.5">
+        <Rectangle Fill="#FFBBBBBB" Height="10" Canvas.Left="100" Stroke="Black" Canvas.Top="517" Width="700" RenderTransformOrigin="0.5,0.5" RadiusX="3" RadiusY="3">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -212,7 +250,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle x:Name="rectangle5" Fill="#FFF4F4F5" Height="10" Canvas.Left="797" Stroke="Black" Canvas.Top="481" Width="90" RenderTransformOrigin="-0.011,0.2">
+        <Rectangle x:Name="rectangle5" Fill="#FFBBBBBB" Height="10" Canvas.Left="797" Stroke="Black" Canvas.Top="481" Width="90" RenderTransformOrigin="0.007,0.124" RadiusX="3" RadiusY="3">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -222,8 +260,8 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle Fill="#FFF4F4F5" Height="10" Canvas.Left="41" Stroke="Black" Canvas.Top="553" Width="69"/>
-        <Rectangle x:Name="rectangle3" Fill="#FFF4F4F5" Height="100" Canvas.Left="10" Stroke="Black" Canvas.Top="413" Width="10" RenderTransformOrigin="0.4,0.95">
+        <Rectangle Fill="#FFBBBBBB" Height="10" Canvas.Left="41" Stroke="Black" Canvas.Top="553" Width="69" RadiusX="3" RadiusY="3"/>
+        <Rectangle x:Name="rectangle3" Fill="#FFBBBBBB" Height="100" Canvas.Left="10" Stroke="Black" Canvas.Top="413" Width="10" RenderTransformOrigin="0.4,0.95" RadiusX="3" RadiusY="3">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -244,5 +282,9 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
+        <Ellipse Fill="#FFBBBBBB" Height="20" Stroke="Black" Canvas.Top="145" Width="20" Canvas.Left="7"/>
+        <Ellipse Fill="#FFBBBBBB" Height="20" Stroke="Black" Canvas.Top="499" Width="20" Canvas.Left="5"/>
+        <Ellipse Fill="Black" Height="2" Canvas.Left="809" Stroke="Black" Canvas.Top="227" Width="2"/>
+        <Ellipse Fill="Black" Height="2" Canvas.Left="877.692" Stroke="Black" Canvas.Top="234.477" Width="2"/>
     </Canvas>
 </UserControl>

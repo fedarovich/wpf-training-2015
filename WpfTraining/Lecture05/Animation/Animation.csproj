@@ -62,6 +62,9 @@
     <Compile Include="Views\KeyFramesAnimations.xaml.cs">
       <DependentUpon>KeyFramesAnimations.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PathAnimations.xaml.cs">
+      <DependentUpon>PathAnimations.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SimpleAnimations.xaml.cs">
       <DependentUpon>SimpleAnimations.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\KeyFramesAnimations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PathAnimations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
