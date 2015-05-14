@@ -1,0 +1,248 @@
+﻿<UserControl x:Class="Animation.Views.ComplexKeyFrameAnimations"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="920" Height="635">
+    <UserControl.Resources>
+
+        <Storyboard x:Key="Storyboard1" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-6"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="84"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="821">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="821"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="821"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="85">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.1" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:5.4" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6.6" Value="50"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="177">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="431">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BounceEase EasingMode="EaseOut" Bounciness="2" Bounces="4"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="426"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="503">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.1" Value="503"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:5.4" Value="503"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6.6" Value="100">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase EasingMode="EaseOut" Springiness="3" Oscillations="3"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6.6" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:7.1" Value="6"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6.6" Value="-90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:7.1" Value="6"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="80.081"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:5" Value="80.081"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:5.4" Value="80.081"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6.6" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:7.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="-6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.3" Value="-6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="ellipse1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="61"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.1" Value="61"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:5" Value="518"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:5.4" Value="518"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6.6" Value="115">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:7.1" Value="115"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:7.5" Value="61"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="rectangle6">
+                <EasingDoubleKeyFrame KeyTime="0" Value="61"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.1" Value="61"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:5" Value="518"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:5.4" Value="518"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6.6" Value="115">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:7.1" Value="115"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:7.5" Value="61"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Canvas>
+        <Ellipse x:Name="ellipse" Fill="#FFF4F4F5" Height="50" Canvas.Left="50" Stroke="Black" Canvas.Top="100" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Rectangle x:Name="rectangle4" Fill="#FFF4F4F5" Height="10" Canvas.Left="10" Stroke="Black" Canvas.Top="150" Width="100" RenderTransformOrigin="0.072,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FFF4F4F5" Height="10" Canvas.Left="107" Stroke="Black" Canvas.Top="186" Width="700" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="rectangle1" Fill="#FFF4F4F5" Height="10" Canvas.Left="804.976" Stroke="Black" Canvas.Top="223.083" Width="40" RenderTransformOrigin="0.133,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="rectangle2" Fill="#FFF4F4F5" Height="10" Canvas.Left="844" Stroke="Black" Canvas.Top="230" Width="40" RenderTransformOrigin="0.833,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FFF4F4F5" Height="56" Canvas.Left="862" Stroke="Black" Canvas.Top="154" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-42.754"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="rectangle" Fill="#FFF4F4F5" Height="10" Canvas.Left="10" Stroke="Black" Canvas.Top="120" Width="31" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FFF4F4F5" Height="10" Canvas.Left="100" Stroke="Black" Canvas.Top="517" Width="700" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-6"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="rectangle5" Fill="#FFF4F4F5" Height="10" Canvas.Left="797" Stroke="Black" Canvas.Top="481" Width="90" RenderTransformOrigin="-0.011,0.2">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="#FFF4F4F5" Height="10" Canvas.Left="41" Stroke="Black" Canvas.Top="553" Width="69"/>
+        <Rectangle x:Name="rectangle3" Fill="#FFF4F4F5" Height="100" Canvas.Left="10" Stroke="Black" Canvas.Top="413" Width="10" RenderTransformOrigin="0.4,0.95">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Ellipse x:Name="ellipse1" Fill="#FFF4F4F5" Height="20" Canvas.Left="65" Stroke="Black" Canvas.Top="61" Width="20"/>
+        <Rectangle x:Name="rectangle6" Fill="#FFF4F4F5" Height="61" Canvas.Left="74" Stroke="Black" Width="2" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+    </Canvas>
+</UserControl>
