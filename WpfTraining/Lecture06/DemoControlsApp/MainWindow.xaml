@@ -7,5 +7,11 @@
         <TabItem Header="Stopwatch">
             <views:StopwatchControlDemo />
         </TabItem>
+        <TabItem Header="CenterCanvas">
+            <views:CenterCanvasDemo />
+        </TabItem>
+        <TabItem Header="FieldsetGrid">
+            <views:FieldsetGridDemo />
+        </TabItem>
     </TabControl>
 </Window>
