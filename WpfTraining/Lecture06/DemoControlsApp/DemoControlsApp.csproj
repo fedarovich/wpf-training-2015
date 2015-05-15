@@ -53,6 +53,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\CenterCanvasDemo.xaml.cs">
+      <DependentUpon>CenterCanvasDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FieldsetGridDemo.xaml.cs">
+      <DependentUpon>FieldsetGridDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StopwatchControlDemo.xaml.cs">
       <DependentUpon>StopwatchControlDemo.xaml</DependentUpon>
     </Compile>
@@ -68,6 +74,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\CenterCanvasDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FieldsetGridDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\StopwatchControlDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
