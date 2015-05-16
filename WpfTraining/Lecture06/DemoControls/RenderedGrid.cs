@@ -46,20 +46,32 @@ namespace DemoControls
 
         protected override void OnRender(DrawingContext drawingContext)
         {
+            // Calculate current DPI.
+            Matrix m = PresentationSource.FromVisual(this)
+                .CompositionTarget.TransformToDevice;
+            double dpiFactor = 1 / m.M11;
+            
+            // Let the pen width be one PHYSICAL pixel
+            var pen = new Pen(GridLineBrush, 1 * dpiFactor);
+
             // Prepare guidelines for lines
+            #region guidelines
+
+            double halfPenThickness = pen.Thickness / 2.0;
             var guidelines = new GuidelineSet();
-            for (double x = 0.5; x < RenderSize.Width; x += HorizontalInterval)
+            for (double x = 0; x < RenderSize.Width; x += HorizontalInterval)
             {
-                guidelines.GuidelinesX.Add(x);
+                guidelines.GuidelinesX.Add(x + halfPenThickness);
             }
-            for (double y = 0.5; y < RenderSize.Height; y += VerticalInterval)
+            for (double y = 0; y < RenderSize.Height; y += VerticalInterval)
             {
-                guidelines.GuidelinesY.Add(y);
+                guidelines.GuidelinesY.Add(y + halfPenThickness);
             }
             drawingContext.PushGuidelineSet(guidelines);
 
+            #endregion
+
             // Draw Lines
-            var pen = new Pen(GridLineBrush, 1);
             for (double x = 0; x < RenderSize.Width; x += HorizontalInterval)
             {
                 drawingContext.DrawLine(pen, new Point(x, 0), new Point(x, RenderSize.Height));
