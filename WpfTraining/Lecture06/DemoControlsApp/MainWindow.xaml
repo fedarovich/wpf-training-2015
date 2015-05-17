@@ -13,5 +13,8 @@
         <TabItem Header="FieldsetGrid">
             <views:FieldsetGridDemo />
         </TabItem>
+        <TabItem Header="Design-Time">
+            <views:DesignTimeDemo />
+        </TabItem>
     </TabControl>
 </Window>

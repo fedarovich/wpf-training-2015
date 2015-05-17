@@ -90,6 +90,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoControls", "Lecture06\D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoControlsApp", "Lecture06\DemoControlsApp\DemoControlsApp.csproj", "{984594F2-D108-4D89-9ABB-EE62A31B7B8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoControls.Design", "Lecture06\DemoControls.Design\DemoControls.Design.csproj", "{EBFBA45E-7D9F-4699-B393-2B0C492F4301}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -228,6 +230,10 @@ Global
 		{984594F2-D108-4D89-9ABB-EE62A31B7B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{984594F2-D108-4D89-9ABB-EE62A31B7B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{984594F2-D108-4D89-9ABB-EE62A31B7B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBFBA45E-7D9F-4699-B393-2B0C492F4301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBFBA45E-7D9F-4699-B393-2B0C492F4301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBFBA45E-7D9F-4699-B393-2B0C492F4301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBFBA45E-7D9F-4699-B393-2B0C492F4301}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -266,5 +272,6 @@ Global
 		{52FFEB7A-8789-4A71-A7C8-E018DBDF0CDA} = {71FC7BC3-5955-4708-941D-31167FD1F426}
 		{474E1793-F5F8-424C-8F6D-563D89374EBD} = {0EDB4478-A9C5-426F-A4EA-84662A572A8A}
 		{984594F2-D108-4D89-9ABB-EE62A31B7B8A} = {0EDB4478-A9C5-426F-A4EA-84662A572A8A}
+		{EBFBA45E-7D9F-4699-B393-2B0C492F4301} = {0EDB4478-A9C5-426F-A4EA-84662A572A8A}
 	EndGlobalSection
 EndGlobal

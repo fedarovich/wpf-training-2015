@@ -2,11 +2,13 @@
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace DemoControls
 {
+    [StyleTypedPropertyAttribute(Property = "ButtonStyle", StyleTargetType = typeof(ButtonBase))]
     public class StopwatchControl : Control
     {
         public static readonly DependencyProperty ElapsedProperty = DependencyProperty.Register(
