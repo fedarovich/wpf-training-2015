@@ -1,0 +1,18 @@
+﻿<Window x:Class="DemoControls.Design.TextEditorDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Edit Text Property" Height="300" Width="300" Name="dialog">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBox Text="{Binding ElementName=dialog, Path=Text, UpdateSourceTrigger=PropertyChanged}" Margin="5" 
+                 AcceptsReturn="True" VerticalContentAlignment="Stretch"
+                 TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+        <UniformGrid Grid.Row="1" HorizontalAlignment="Right" Columns="2">
+            <Button IsDefault="True" Content="OK" Margin="5" Click="OnAccept"/>
+            <Button IsCancel="True" Content="Cancel" Margin="5" />
+        </UniformGrid>
+    </Grid>
+</Window>
