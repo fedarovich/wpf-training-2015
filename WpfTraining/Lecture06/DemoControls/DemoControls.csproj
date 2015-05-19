@@ -69,6 +69,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="RenderedGrid.cs" />
+    <Compile Include="SimpleBorder.cs" />
     <Compile Include="StopwatchControl.cs" />
     <Compile Include="TextView.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
