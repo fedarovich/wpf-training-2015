@@ -7,6 +7,9 @@
         <TabItem Header="Stopwatch">
             <views:StopwatchControlDemo />
         </TabItem>
+        <TabItem Header="SimpleBorderDemo">
+            <views:SimpleBorderDemo />
+        </TabItem>
         <TabItem Header="CenterCanvas">
             <views:CenterCanvasDemo />
         </TabItem>

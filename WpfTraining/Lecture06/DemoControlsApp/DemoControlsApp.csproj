@@ -62,6 +62,9 @@
     <Compile Include="Views\FieldsetGridDemo.xaml.cs">
       <DependentUpon>FieldsetGridDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SimpleBorderDemo.xaml.cs">
+      <DependentUpon>SimpleBorderDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StopwatchControlDemo.xaml.cs">
       <DependentUpon>StopwatchControlDemo.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FieldsetGridDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SimpleBorderDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
