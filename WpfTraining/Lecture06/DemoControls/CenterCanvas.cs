@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace DemoControls
 {
@@ -14,11 +8,11 @@ namespace DemoControls
     {
         public static readonly DependencyProperty CenterXProperty = DependencyProperty.RegisterAttached(
             "CenterX", typeof (double), typeof (CenterCanvas),
-            new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsArrange));
+            new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsParentArrange));
 
         public static readonly DependencyProperty CenterYProperty = DependencyProperty.RegisterAttached(
             "CenterY", typeof(double), typeof(CenterCanvas),
-            new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsArrange));
+            new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsParentArrange));
 
         [AttachedPropertyBrowsableForChildren]
         [Category("Layout")]
