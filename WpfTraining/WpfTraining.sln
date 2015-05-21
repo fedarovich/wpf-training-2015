@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "Lecture01\HelloWorld\HelloWorld.csproj", "{D099091E-37FF-468B-9B1C-CD29C25A0AE5}"
 EndProject
@@ -91,6 +91,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoControlsApp", "Lecture06\DemoControlsApp\DemoControlsApp.csproj", "{984594F2-D108-4D89-9ABB-EE62A31B7B8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoControls.Design", "Lecture06\DemoControls.Design\DemoControls.Design.csproj", "{EBFBA45E-7D9F-4699-B393-2B0C492F4301}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lecture 07", "Lecture 07", "{A72705F4-7C77-48E4-90CB-A04D6140EAC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachedBehaviors", "Lecture07\AttachedBehaviors\AttachedBehaviors.csproj", "{C5917F6C-F2F2-41BF-A8CF-ACEE8AE55ED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlendBehaviors", "Lecture07\BlendBehaviors\BlendBehaviors.csproj", "{BFC8E34E-9B7E-4EFE-AA1C-BCBD9C18495C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -234,6 +240,14 @@ Global
 		{EBFBA45E-7D9F-4699-B393-2B0C492F4301}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBFBA45E-7D9F-4699-B393-2B0C492F4301}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBFBA45E-7D9F-4699-B393-2B0C492F4301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5917F6C-F2F2-41BF-A8CF-ACEE8AE55ED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5917F6C-F2F2-41BF-A8CF-ACEE8AE55ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5917F6C-F2F2-41BF-A8CF-ACEE8AE55ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5917F6C-F2F2-41BF-A8CF-ACEE8AE55ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC8E34E-9B7E-4EFE-AA1C-BCBD9C18495C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC8E34E-9B7E-4EFE-AA1C-BCBD9C18495C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC8E34E-9B7E-4EFE-AA1C-BCBD9C18495C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC8E34E-9B7E-4EFE-AA1C-BCBD9C18495C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -273,5 +287,7 @@ Global
 		{474E1793-F5F8-424C-8F6D-563D89374EBD} = {0EDB4478-A9C5-426F-A4EA-84662A572A8A}
 		{984594F2-D108-4D89-9ABB-EE62A31B7B8A} = {0EDB4478-A9C5-426F-A4EA-84662A572A8A}
 		{EBFBA45E-7D9F-4699-B393-2B0C492F4301} = {0EDB4478-A9C5-426F-A4EA-84662A572A8A}
+		{C5917F6C-F2F2-41BF-A8CF-ACEE8AE55ED1} = {A72705F4-7C77-48E4-90CB-A04D6140EAC5}
+		{BFC8E34E-9B7E-4EFE-AA1C-BCBD9C18495C} = {A72705F4-7C77-48E4-90CB-A04D6140EAC5}
 	EndGlobalSection
 EndGlobal
