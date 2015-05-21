@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="BlendBehaviors.Views.DoubleInputView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:globalization="clr-namespace:System.Globalization;assembly=mscorlib"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:behaviors="clr-namespace:BlendBehaviors.Behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Name="root">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Culture: " />
+        <ComboBox Grid.Row="0" Grid.Column="1" Name="CultureComboBox"
+            SelectedItem="{x:Static globalization:CultureInfo.CurrentCulture}"
+            ItemsSource="{Binding ElementName=root, Path=AllCultures}"/>
+        <Label Grid.Row="0" Grid.Column="3" Content="Decimal Places: " />
+        <TextBox Grid.Row="0" Grid.Column="4" Name="DecimalPlacesTextBox"
+            Text="0" />
+        <CheckBox Grid.Row="0" Grid.Column="6" Name="AllowNegativeCheckBox"
+            VerticalAlignment="Center" 
+            Content="Allow Negative" />
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Decimal Key: " />
+        <ComboBox Grid.Row="2" Grid.Column="1" Name="DecimalKeyModeComboBox"
+            IsSynchronizedWithCurrentItem="True"
+            ItemsSource="{Binding ElementName=root, Path=DecimalKeyInputModes}"/>
+        <CheckBox Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Name="AcceptPeriodCheckBox"
+            VerticalAlignment="Center" 
+            Content="Always accept period" />
+        <CheckBox Grid.Row="2" Grid.Column="6" Name="AcceptCommaCheckBox"
+            VerticalAlignment="Center" 
+            Content="Always accept comma" />
+
+        <TextBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7">
+            <i:Interaction.Behaviors>
+                <behaviors:TextBoxDoubleInputBehavior 
+                    Culture="{Binding ElementName=CultureComboBox, Path=SelectedItem}"
+                    DecimalPlaces="{Binding ElementName=DecimalPlacesTextBox, Path=Text}"
+                    AllowNegative="{Binding ElementName=AllowNegativeCheckBox, Path=IsChecked, Mode=TwoWay}"
+                    DecimalKeyInputMode="{Binding ElementName=DecimalKeyModeComboBox, Path=SelectedItem}"
+                    AlwaysAcceptPeriodAsDecimalSeparator="{Binding ElementName=AcceptPeriodCheckBox, Path=IsChecked}"
+                    AlwaysAcceptCommaAsDecimalSeparator="{Binding ElementName=AcceptCommaCheckBox, Path=IsChecked}"/>
+            </i:Interaction.Behaviors>
+        </TextBox>
+    </Grid>
+</UserControl>
