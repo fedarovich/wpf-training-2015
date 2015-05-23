@@ -1,0 +1,52 @@
+﻿<Window x:Class="TextRenderingOptions.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="600">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" Content="Formatting Mode: "/>
+        <ComboBox Grid.Row="0" Grid.Column="1" Name="FormattingModeSelector"
+            ItemsSource="{StaticResource TextFormattingModes}" IsSynchronizedWithCurrentItem="True"/>
+
+        <Label Grid.Row="0" Grid.Column="2" Content="Rendering Mode: "/>
+        <ComboBox Grid.Row="0" Grid.Column="3" Name="RenderingModeSelector"
+            ItemsSource="{StaticResource TextRenderingModes}" IsSynchronizedWithCurrentItem="True"/>
+        
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"
+            TextOptions.TextFormattingMode="{Binding ElementName=FormattingModeSelector, Path=SelectedItem}"
+            TextOptions.TextRenderingMode="{Binding ElementName=RenderingModeSelector, Path=SelectedItem}">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Text" Value="The quick brown fox jumps over the lazy dog" />
+                    <Setter Property="Margin" Value="0,5" />
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock FontSize="12" />
+            <TextBlock FontSize="13" />
+            <TextBlock FontSize="14" />
+            <TextBlock FontSize="15" />
+            <TextBlock FontSize="16" />
+            <TextBlock FontSize="17" />
+            <TextBlock FontSize="18" />
+            <TextBlock FontSize="19" />
+            <TextBlock FontSize="20" />
+            <TextBlock FontSize="21" />
+            <TextBlock FontSize="22" />
+            <TextBlock FontSize="23" />
+            <TextBlock FontSize="24" />
+            <TextBlock FontSize="25" />
+        </StackPanel>
+    </Grid>
+</Window>
