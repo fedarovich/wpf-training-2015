@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFC8E34E-9B7E-4EFE-AA1C-BCBD9C18495C}</ProjectGuid>
+    <ProjectGuid>{1626588F-BFD9-447C-8BC4-00E428A0A41A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BlendBehaviors</RootNamespace>
-    <AssemblyName>BlendBehaviors</AssemblyName>
+    <RootNamespace>Effects</RootNamespace>
+    <AssemblyName>Effects</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,13 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JetBrains.Annotations">
-      <HintPath>..\..\packages\JetBrains.Annotations.9.1.1\lib\net20\JetBrains.Annotations.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -60,18 +53,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Behaviors\DecimalKeyInputMode.cs" />
-    <Compile Include="Behaviors\NativeMethods.cs" />
-    <Compile Include="Behaviors\TextBoxDoubleInputBehavior.cs" />
-    <Compile Include="ViewModels\EventTriggerDemoViewModel.cs" />
-    <Compile Include="Views\DoubleInputView.xaml.cs">
-      <DependentUpon>DoubleInputView.xaml</DependentUpon>
+    <Compile Include="CustomEffects\ChromaKeyEffect.cs" />
+    <Compile Include="CustomEffects\GrayscaleEffect.cs" />
+    <Compile Include="Views\BlurEffectDemo.xaml.cs">
+      <DependentUpon>BlurEffectDemo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EventTriggerDemoView.xaml.cs">
-      <DependentUpon>EventTriggerDemoView.xaml</DependentUpon>
+    <Compile Include="Views\ChromaKeyEffectDemo.xaml.cs">
+      <DependentUpon>ChromaKeyEffectDemo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\IntegerInputView.xaml.cs">
-      <DependentUpon>IntegerInputView.xaml</DependentUpon>
+    <Compile Include="Views\DropShadowEffectDemo.xaml.cs">
+      <DependentUpon>DropShadowEffectDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GrayscaleEffectDemo.xaml.cs">
+      <DependentUpon>GrayscaleEffectDemo.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -81,20 +75,23 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Behaviors\TextBoxIntegerInputBehavior.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\DoubleInputView.xaml">
+    <Page Include="Views\BlurEffectDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\EventTriggerDemoView.xaml">
+    <Page Include="Views\ChromaKeyEffectDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\IntegerInputView.xaml">
+    <Page Include="Views\DropShadowEffectDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GrayscaleEffectDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,7 +114,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <Resource Include="CustomEffects\GrayscaleEffect.ps" />
+    <Resource Include="CustomEffects\ChromaKeyEffect.ps" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,15 +125,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\emotion_david_blaine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CustomEffects\GrayscaleEffect.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CustomEffects\ChromaKeyEffect.fx" />
+    <Resource Include="Images\Chromakey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Scenery.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
