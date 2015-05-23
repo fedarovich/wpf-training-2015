@@ -1,0 +1,59 @@
+﻿<Window x:Class="WeakEvents.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:h="clr-namespace:WeakEvents.Handlers"
+        Title="MainWindow" Height="350" Width="600"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0">
+            <Run Text="Strong Subscriptions: " />
+            <Run Text="{Binding Path=(h:StrongHandler.InstanceCount), Mode=OneWay}" />
+        </TextBlock>
+        <ListBox Grid.Row="2" Grid.Column="0" ItemsSource="{Binding StrongHandlers}" />
+        <Button Grid.Row="4" Grid.Column="0" Content="Add" Click="OnAddStrongHandler"/>
+        <Button Grid.Row="6" Grid.Column="0" Content="Clear" Click="OnClearStrongHandlers"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="2">
+            <Run Text="Weak Subscriptions: " />
+            <Run Text="{Binding Path=(h:WeakHandler.InstanceCount), Mode=OneWay}" />
+        </TextBlock>
+        <ListBox Grid.Row="2" Grid.Column="2" ItemsSource="{Binding WeakHandlers}" />
+        <Button Grid.Row="4" Grid.Column="2" Content="Add" Click="OnAddWeakHandler"/>
+        <Button Grid.Row="6" Grid.Column="2" Content="Clear" Click="OnClearWeakHandlers"/>
+        
+        <TextBlock Grid.Row="0" Grid.Column="4">
+            <Run Text="Generic Weak Subscriptions: " />
+            <Run Text="{Binding Path=(h:GenericWeakHandler.InstanceCount), Mode=OneWay}" />
+        </TextBlock>
+        <ListBox Grid.Row="2" Grid.Column="4" ItemsSource="{Binding GenericWeakHandlers}" />
+        <Button Grid.Row="4" Grid.Column="4" Content="Add" Click="OnAddGenericWeakHandler"/>
+        <Button Grid.Row="6" Grid.Column="4" Content="Clear" Click="OnClearGenericWeakHandlers"/>
+
+        <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Content="Notify" 
+                Name="NotifyButton" />
+
+        <Button Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="5" Content="GC.Collect()" 
+                Click="OnCollect"/>
+    </Grid>
+</Window>

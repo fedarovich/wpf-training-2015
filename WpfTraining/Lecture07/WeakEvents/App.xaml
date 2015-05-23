@@ -1,0 +1,19 @@
+﻿<Application x:Class="WeakEvents.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:handlers="clr-namespace:WeakEvents.Handlers"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <DataTemplate DataType="{x:Type handlers:HandlerBase}">
+             <Border Name="border" Padding="1" Margin="1" BorderThickness="1" BorderBrush="Transparent">
+                 <TextBlock Text="{Binding}" />
+             </Border>
+             
+             <DataTemplate.Triggers>
+                 <DataTrigger Binding="{Binding Notified}" Value="True">
+                     <Setter TargetName="border" Property="BorderBrush" Value="Red" />
+                </DataTrigger>
+             </DataTemplate.Triggers>
+         </DataTemplate>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,18 @@
+﻿<Application x:Class="TextRenderingOptions.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <x:Array Type="TextFormattingMode" x:Key="TextFormattingModes">
+            <TextFormattingMode>Ideal</TextFormattingMode>
+            <TextFormattingMode>Display</TextFormattingMode>
+        </x:Array>
+        <x:Array Type="TextRenderingMode" x:Key="TextRenderingModes">
+            <TextRenderingMode>Auto</TextRenderingMode>
+            <TextRenderingMode>Aliased</TextRenderingMode>
+            <TextRenderingMode>Grayscale</TextRenderingMode>
+            <TextRenderingMode>ClearType</TextRenderingMode>
+        </x:Array>
+    </Application.Resources>
+</Application>
