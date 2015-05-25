@@ -8,10 +8,10 @@ namespace DemoMvvm
 {
     public interface IEventAggregator
     {
-        void Subcribe(object subscriber);
+        void Subscribe(object subscriber);
 
         void Unsubscribe(object subscriber);
 
-        void Publish(object message);
+        void Publish(object message, Action<Action> marshal = null);
     }
 }
