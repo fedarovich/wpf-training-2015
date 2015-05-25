@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DemoMvvm
 {
@@ -11,7 +7,8 @@ namespace DemoMvvm
         public Type Resolve(Type viewModelType)
         {
             var name = viewModelType.FullName.Replace("ViewModel", "View");
-            var viewType = Type.GetType(name, false);
+            var assembly = viewModelType.Assembly;
+            var viewType = assembly.GetType(name, false);
             return viewType;
         }
     }

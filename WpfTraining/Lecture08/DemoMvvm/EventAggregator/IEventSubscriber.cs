@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DemoMvvm
 {
-    public interface IEventSubscriber<in T>
+    public interface IEventSubscriber { }
+
+    public interface IEventSubscriber<T> : IEventSubscriber
     {
         void ReceiveEvent(T @event);
     }
