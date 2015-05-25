@@ -61,11 +61,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Behaviors\DecimalKeyInputMode.cs" />
+    <Compile Include="Behaviors\EventToCommandBehavior.cs" />
     <Compile Include="Behaviors\NativeMethods.cs" />
     <Compile Include="Behaviors\TextBoxDoubleInputBehavior.cs" />
+    <Compile Include="ViewModels\EventToCommandViewModel.cs" />
     <Compile Include="ViewModels\EventTriggerDemoViewModel.cs" />
     <Compile Include="Views\DoubleInputView.xaml.cs">
       <DependentUpon>DoubleInputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventToCommandView.xaml.cs">
+      <DependentUpon>EventToCommandView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EventTriggerDemoView.xaml.cs">
       <DependentUpon>EventTriggerDemoView.xaml</DependentUpon>
@@ -87,6 +92,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\DoubleInputView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EventToCommandView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
