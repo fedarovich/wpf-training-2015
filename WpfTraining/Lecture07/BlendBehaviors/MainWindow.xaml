@@ -4,6 +4,9 @@
         xmlns:views="clr-namespace:BlendBehaviors.Views"
         Title="Blend Behaviors" Height="500" Width="700">
     <TabControl>
+        <TabItem Header="EventToCommandBehavior">
+            <views:EventToCommandView />
+        </TabItem>
         <TabItem Header="Integer Input">
             <views:IntegerInputView />
         </TabItem>
