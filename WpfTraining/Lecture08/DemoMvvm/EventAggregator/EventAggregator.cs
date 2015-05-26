@@ -132,7 +132,7 @@ namespace DemoMvvm
                 foreach (var @interface in interfaces)
                 {
                     var type = @interface.GetGenericArguments()[0];
-                    var method = @interface.GetMethod("Handle", new Type[] { type });
+                    var method = @interface.GetMethod("ReceiveEvent", new Type[] { type });
                     supportedHandlers[type] = method;
                 }
             }
