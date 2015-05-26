@@ -4,10 +4,97 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:viewModels="clr-namespace:Weather.ViewModels"
+        xmlns:converters="clr-namespace:Weather.Converters"
         mc:Ignorable="d" 
         d:DataContext="{d:DesignInstance Type=viewModels:ShellViewModel, IsDesignTimeCreatable=False}"
         Title="Weather" Height="300" Width="300" TextOptions.TextFormattingMode="Display">
-    <Grid>
+    <Window.Resources>
+        <DataTemplate x:Key="ProgressTemplate">
+            <Border Background="#20000000">
+                <StackPanel VerticalAlignment="Center" Margin="20">
+                    <TextBlock Text="Loading..."  />
+                    <ProgressBar Height="20" IsIndeterminate="True" Margin="0,10,0,0" />
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="CancelledTemplate">
+            <Border Background="#20FFFF00" BorderBrush="Brown" BorderThickness="1">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Text="The operation was cancelled." Foreground="Brown" TextWrapping="Wrap" />
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ErrorTemplate">
+            <Border Background="#20FF0000" BorderBrush="Red" BorderThickness="1">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Text="{Binding ErrorMessage}" Foreground="Red" TextWrapping="Wrap"/>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="SuccessTemplate">
+            <Border Background="#200000FF" BorderBrush="Blue" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" Text="Temperature: "/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding Result.Temperature.Value, StringFormat={}{0} &#x2103;}" />
+                    
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" Text="Humidity: " />
+                    <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding Result.Humidity.Value, StringFormat={}{0} %}"/>
+                    
+                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" Text="Pressure: " />
+                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding Result.Pressure.Value, StringFormat={}{0} hPa}"/>
+                </Grid>
+            </Border>
+        </DataTemplate>
+
+        <converters:TaskStatusToDataTemlateConverter x:Key="StatusConverter"
+            ProgressTemplate="{StaticResource ProgressTemplate}"
+            CancelledTemplate="{StaticResource CancelledTemplate}"
+            ErrorTemplate="{StaticResource ErrorTemplate}"
+            SuccessfullyCompletedTemplate="{StaticResource SuccessTemplate}" />
         
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
+    
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        
+        <TextBox Grid.Row="0" Grid.Column="0" Margin="5" Text="{Binding City}" />
+        
+        <!-- Variant 1: DelegateCommand -->
+        <Button Grid.Row="0" Grid.Column="1" Margin="5" Content="Refresh"
+            Command="{Binding GetCurrentWeatherCommand}"
+            IsEnabled="{Binding CurrentWeather.IsCompleted}"/>
+        <!-- End of Variant 1 -->
+
+        <!-- Variant 2: AsyncCancellableCommand -->
+        <!--<Button Grid.Row="0" Grid.Column="1" Margin="5" Content="Refresh"
+            Command="{Binding GetCurrentWeatherCommand}"
+            Visibility="{Binding CurrentWeather.IsCompleted, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <Button Grid.Row="0" Grid.Column="1" Margin="5" Content="Cancel"
+            Command="{Binding GetCurrentWeatherCommand.CancelCommand}"
+            Visibility="{Binding CurrentWeather.IsNotCompleted, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"/>-->
+        <!-- End of Variant 2 -->      
+        
+        <ContentControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" 
+            Content="{Binding CurrentWeather}"
+            ContentTemplate="{Binding CurrentWeather.Status, Converter={StaticResource StatusConverter}}"/>
     </Grid>
 </Window>
