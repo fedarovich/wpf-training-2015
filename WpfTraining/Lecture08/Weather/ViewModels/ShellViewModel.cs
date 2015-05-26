@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using DemoMvvm;
@@ -9,14 +10,17 @@ namespace Weather.ViewModels
 {
     public class ShellViewModel : ViewModelBase
     {
-        private string city;
+        private string city = string.Empty;
         private readonly OpenWeatherMapClient client;
         private INotifyTaskCompletion<CurrentWeatherResponse> currentWeather; 
 
         public ShellViewModel()
         {
             client = new OpenWeatherMapClient();
-            GetCurrentWeatherCommand = new AsyncCommand(GetCurrentWeatherCommandExecute);
+            // Variant 1: with delegate command.
+            GetCurrentWeatherCommand = new DelegateCommand(GetCurrentWeatherCommandExecute);
+            // Variant 2: with cancellable async command.
+            //GetCurrentWeatherCommand = new AsyncCancellableCommand(GetCurrentWeatherCommandExecuteAsync);
         }
 
         public string City
@@ -43,11 +47,33 @@ namespace Weather.ViewModels
 
         public ICommand GetCurrentWeatherCommand { get; private set; }
 
-        private async Task GetCurrentWeatherCommandExecute()
+        // Variant 1: with delegate command.
+        private void GetCurrentWeatherCommandExecute()
         {
-            var weatherTask = client.CurrentWeather.GetByName(City);
-            CurrentWeather = NotifyTaskCompletion.Create(weatherTask);
-            await CurrentWeather.Task;
+            CurrentWeather = NotifyTaskCompletion.Create(
+                () => GetCurrentWeatherAsync(CancellationToken.None));
+        }
+
+        // Variant 2: with cancellable async command.
+        private async Task GetCurrentWeatherCommandExecuteAsync(CancellationToken token)
+        {
+            CurrentWeather = NotifyTaskCompletion.Create(
+                () => GetCurrentWeatherAsync(token));
+
+            try
+            {
+                await CurrentWeather.Task;
+            }
+            catch
+            {
+                // Do nothing. Errors are handled in other place.
+            }
+        }
+
+        private async Task<CurrentWeatherResponse> GetCurrentWeatherAsync(CancellationToken token)
+        {
+            await Task.Delay(3000, token);
+            return await client.CurrentWeather.GetByName(City, MetricSystem.Metric);
         }
     }
 }

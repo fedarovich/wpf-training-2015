@@ -104,9 +104,10 @@ namespace DemoMvvm
             public void NotifyCommandStarting()
             {
                 commandExecuting = true;
-                if (!cts.IsCancellationRequested)
-                    return;
-                cts = new CancellationTokenSource();
+                if (cts.IsCancellationRequested)
+                {
+                    cts = new CancellationTokenSource();
+                }
                 RaiseCanExecuteChanged();
             }
 
