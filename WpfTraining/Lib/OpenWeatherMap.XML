@@ -1,0 +1,1644 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenWeatherMap</name>
+    </assembly>
+    <members>
+        <member name="T:OpenWeatherMap.ApiClientBase">
+            <summary>
+                Class ApiClientBase.
+            </summary>
+            <seealso cref="T:OpenWeatherMap.IApiClientBase"/>
+        </member>
+        <member name="T:OpenWeatherMap.IApiClientBase">
+            <summary>
+                Interface IApiClientBase.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.IApiClientBase.Request">
+            <summary>
+                Gets or sets the request.
+            </summary>
+            <value>
+                The request.
+            </value>
+        </member>
+        <member name="M:OpenWeatherMap.ApiClientBase.#ctor(OpenWeatherMap.IOpenWeatherMapRequest,System.String)">
+            <summary>
+                Initializes a new instance of the OpenWeatherMap.ApiClientBase class.
+            </summary>
+            <param name="request">The openweathermap request.</param>
+            <param name="segment">The segment.</param>
+        </member>
+        <member name="M:OpenWeatherMap.ApiClientBase.GetByName``1(System.String,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32},System.Nullable{OpenWeatherMap.Accuracy})">
+            <summary>
+                Gets by name.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="cityName">Name of the city.</param>
+            <param name="metric">  The metric.</param>
+            <param name="language">The language.</param>
+            <param name="count">   The count.</param>
+            <param name="accuracy">The accuracy.</param>
+            <returns>
+                The by name.
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.ApiClientBase.GetByCoordinates``1(OpenWeatherMap.Coordinates,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32},System.Nullable{OpenWeatherMap.Accuracy})">
+            <summary>
+                Gets by coordinates.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="coordinates">The coordinates.</param>
+            <param name="metric">     The metric.</param>
+            <param name="language">   The language.</param>
+            <param name="count">      The count.</param>
+            <param name="accuracy">   The accuracy.</param>
+            <returns>
+                The by coordinates.
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.ApiClientBase.GetByCityId``1(System.Int32,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32})">
+            <summary>
+                Gets by city identifier.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="cityId">  Identifier for the city.</param>
+            <param name="metric">  The metric.</param>
+            <param name="language">The language.</param>
+            <param name="count">   The count.</param>
+            <returns>
+                The by city identifier.
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.ApiClientBase.RunGetRequest``1">
+            <summary>
+                Executes the get request operation.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <returns>
+                A Task&lt;T&gt;
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.ApiClientBase.Send``1">
+            <summary>
+                Send this message.
+            </summary>
+            <exception cref="T:OpenWeatherMap.OpenWeatherMapException">Thrown when an Open Weather Map error condition
+            occurs.</exception>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <returns>
+                A Task&lt;T&gt;
+            </returns>
+        </member>
+        <member name="P:OpenWeatherMap.ApiClientBase.Request">
+            <summary>
+                Gets or sets the openweathermap request.
+            </summary>
+            <value>
+                The request.
+            </value>
+            <seealso cref="P:OpenWeatherMap.IApiClientBase.Request"/>
+        </member>
+        <member name="T:OpenWeatherMap.CurrentWeatherClient">
+            <summary>
+                Class CurrentWeatherClient.
+            </summary>
+            <seealso cref="T:OpenWeatherMap.ApiClientBase"/>
+            <seealso cref="T:OpenWeatherMap.ICurrentWeatherClient"/>
+        </member>
+        <member name="T:OpenWeatherMap.ICurrentWeatherClient">
+            <summary>
+                Interface ICurrentWeatherClient.
+            </summary>
+        </member>
+        <member name="M:OpenWeatherMap.ICurrentWeatherClient.GetByName(System.String,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage)">
+            <summary>
+                Gets Current weather by city name.
+            </summary>
+            <param name="cityName">Name of the city.</param>
+            <param name="metric">  The metric system.</param>
+            <param name="language">The language.</param>
+            <returns>
+                Task {CurrentWeatherResponse}.
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.ICurrentWeatherClient.GetByCoordinates(OpenWeatherMap.Coordinates,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage)">
+            <summary>
+                Gets Current weather by coordinates.
+            </summary>
+            <param name="coordinates">The coordinates.</param>
+            <param name="metric">     The metric system.</param>
+            <param name="language">   The language.</param>
+            <returns>
+                Task {CurrentWeatherResponse}.
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.ICurrentWeatherClient.GetByCityId(System.Int32,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage)">
+            <summary>
+                Gets Current weather by city identifier.
+            </summary>
+            <param name="cityId">  The city identifier.</param>
+            <param name="metric">  The metric.</param>
+            <param name="language">The language.</param>
+            <returns>
+                Task {CurrentWeatherResponse}.
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.CurrentWeatherClient.#ctor(OpenWeatherMap.IOpenWeatherMapRequest)">
+            <summary>
+                Initializes a new instance of the OpenWeatherMap.CurrentWeatherClient class.
+            </summary>
+            <param name="request">The request.</param>
+        </member>
+        <member name="M:OpenWeatherMap.CurrentWeatherClient.GetByName(System.String,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage)">
+            <summary>
+                Gets Current weather by city name.
+            </summary>
+            <param name="cityName">The city Name.</param>
+            <param name="metric">  The metric.</param>
+            <param name="language">The language.</param>
+            <returns>
+                The <see cref="T:System.Threading.Tasks.Task"/>.
+            </returns>
+            <seealso cref="M:OpenWeatherMap.ICurrentWeatherClient.GetByName(string,MetricSystem,OpenWeatherMapLanguage)"/>
+        </member>
+        <member name="M:OpenWeatherMap.CurrentWeatherClient.GetByCoordinates(OpenWeatherMap.Coordinates,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage)">
+            <summary>
+                Gets Current weather by coordinates.
+            </summary>
+            <param name="coordinates">The coordinates.</param>
+            <param name="metric">     The metric system.</param>
+            <param name="language">   The language.</param>
+            <returns>
+                Task {CurrentWeatherResponse}.
+            </returns>
+            <seealso cref="M:OpenWeatherMap.ICurrentWeatherClient.GetByCoordinates(Coordinates,MetricSystem,OpenWeatherMapLanguage)"/>
+        </member>
+        <member name="M:OpenWeatherMap.CurrentWeatherClient.GetByCityId(System.Int32,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage)">
+            <summary>
+                Gets Current weather by city identifier.
+            </summary>
+            <param name="cityId">  The city identifier.</param>
+            <param name="metric">  The metric.</param>
+            <param name="language">The language.</param>
+            <returns>
+                The by city identifier.
+            </returns>
+            <seealso cref="M:OpenWeatherMap.ICurrentWeatherClient.GetByCityId(int,MetricSystem,OpenWeatherMapLanguage)"/>
+        </member>
+        <member name="T:OpenWeatherMap.ForecastClient">
+            <summary>
+                Class ForecastClient.
+            </summary>
+            <seealso cref="T:OpenWeatherMap.ApiClientBase"/>
+            <seealso cref="T:OpenWeatherMap.IForecastClient"/>
+        </member>
+        <member name="T:OpenWeatherMap.IForecastClient">
+            <summary>
+                Interface IForecastClient.
+            </summary>
+        </member>
+        <member name="M:OpenWeatherMap.IForecastClient.GetByName(System.String,System.Boolean,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32})">
+            <summary>
+                Gets Forecast by city name.
+            </summary>
+            <param name="cityName">Name of the city.</param>
+            <param name="daily">   if set to <c>true</c> [daily].</param>
+            <param name="metric">  The metric.</param>
+            <param name="language">The language.</param>
+            <param name="count">   Number of results.</param>
+            <returns>
+                Task {ForecastResponse}.
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.IForecastClient.GetByCoordinates(OpenWeatherMap.Coordinates,System.Boolean,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32})">
+            <summary>
+                Gets Forecast by coordinates.
+            </summary>
+            <param name="coordinates">The coordinates.</param>
+            <param name="daily">      if set to <c>true</c> [daily].</param>
+            <param name="metric">     The metric.</param>
+            <param name="language">   The language.</param>
+            <param name="count">      The count.</param>
+            <returns>
+                Task {ForecastResponse}.
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.IForecastClient.GetByCityId(System.Int32,System.Boolean,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32})">
+            <summary>
+                Gets Forecast by city identifier.
+            </summary>
+            <param name="cityId">  The city identifier.</param>
+            <param name="daily">   if set to <c>true</c> [daily].</param>
+            <param name="metric">  The metric.</param>
+            <param name="language">The language.</param>
+            <param name="count">   The count.</param>
+            <returns>
+                Task {ForecastResponse}.
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.ForecastClient.#ctor(OpenWeatherMap.IOpenWeatherMapRequest)">
+            <summary>
+                Initializes a new instance of the OpenWeatherMap.ForecastClient class.
+            </summary>
+            <param name="request">The request.</param>
+        </member>
+        <member name="M:OpenWeatherMap.ForecastClient.GetByName(System.String,System.Boolean,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32})">
+            <summary>
+                Gets Forecast by city name.
+            </summary>
+            <param name="cityName">Name of the city.</param>
+            <param name="daily">   if set to <c>true</c> [daily].</param>
+            <param name="metric">  The metric.</param>
+            <param name="language">The language.</param>
+            <param name="count">   Number of results.</param>
+            <returns>
+                Task {ForecastResponse}.
+            </returns>
+            <seealso cref="M:OpenWeatherMap.IForecastClient.GetByName(string,bool,MetricSystem,OpenWeatherMapLanguage,int?)"/>
+        </member>
+        <member name="M:OpenWeatherMap.ForecastClient.GetByCoordinates(OpenWeatherMap.Coordinates,System.Boolean,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32})">
+            <summary>
+                Gets Forecast by coordinates.
+            </summary>
+            <param name="coordinates">The coordinates.</param>
+            <param name="daily">      if set to <c>true</c> [daily].</param>
+            <param name="metric">     The metric.</param>
+            <param name="language">   The language.</param>
+            <param name="count">      The count.</param>
+            <returns>
+                Task {ForecastResponse}.
+            </returns>
+            <seealso cref="M:OpenWeatherMap.IForecastClient.GetByCoordinates(Coordinates,bool,MetricSystem,OpenWeatherMapLanguage,int?)"/>
+        </member>
+        <member name="M:OpenWeatherMap.ForecastClient.GetByCityId(System.Int32,System.Boolean,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32})">
+            <summary>
+                Gets Forecast by city identifier.
+            </summary>
+            <param name="cityId">  The city identifier.</param>
+            <param name="daily">   if set to <c>true</c> [daily].</param>
+            <param name="metric">  The metric.</param>
+            <param name="language">The language.</param>
+            <param name="count">   The count.</param>
+            <returns>
+                Task {ForecastResponse}.
+            </returns>
+            <seealso cref="M:OpenWeatherMap.IForecastClient.GetByCityId(int,bool,MetricSystem,OpenWeatherMapLanguage,int?)"/>
+        </member>
+        <member name="T:OpenWeatherMap.ISearchClient">
+            <summary>
+                Interface ISearchClient.
+            </summary>
+        </member>
+        <member name="M:OpenWeatherMap.ISearchClient.GetByName(System.String,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32},System.Nullable{OpenWeatherMap.Accuracy})">
+            <summary>
+                Search by city name.
+            </summary>
+            <param name="cityName">Name of the city.</param>
+            <param name="metric">  The metric.</param>
+            <param name="language">The language.</param>
+            <param name="count">   The count.</param>
+            <param name="accuracy">The accuracy.</param>
+            <returns>
+                Task {SearchResponse}.
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.ISearchClient.GetByCoordinates(OpenWeatherMap.Coordinates,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32},System.Nullable{OpenWeatherMap.Accuracy})">
+            <summary>
+                Search by coordinates.
+            </summary>
+            <param name="coordinates">The coordinates.</param>
+            <param name="metric">     The metric.</param>
+            <param name="language">   The language.</param>
+            <param name="count">      The count.</param>
+            <param name="accuracy">   The accuracy.</param>
+            <returns>
+                Task {SearchResponse}.
+            </returns>
+        </member>
+        <member name="T:OpenWeatherMap.SearchClient">
+            <summary>
+                Class SearchClient.
+            </summary>
+            <seealso cref="T:OpenWeatherMap.ApiClientBase"/>
+            <seealso cref="T:OpenWeatherMap.ISearchClient"/>
+        </member>
+        <member name="M:OpenWeatherMap.SearchClient.#ctor(OpenWeatherMap.IOpenWeatherMapRequest)">
+            <summary>
+                Initializes a new instance of the <see cref="T:OpenWeatherMap.SearchClient"/> class.
+            </summary>
+            <param name="request">The request.</param>
+        </member>
+        <member name="M:OpenWeatherMap.SearchClient.GetByName(System.String,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32},System.Nullable{OpenWeatherMap.Accuracy})">
+            <summary>
+                Search by city name.
+            </summary>
+            <param name="cityName">Name of the city.</param>
+            <param name="metric">  The metric.</param>
+            <param name="language">The language.</param>
+            <param name="count">   The count.</param>
+            <param name="accuracy">The accuracy.</param>
+            <returns>
+                Task {SearchResponse}.
+            </returns>
+            <seealso cref="M:OpenWeatherMap.ISearchClient.GetByName(string,MetricSystem,OpenWeatherMapLanguage,int?,Accuracy?)"/>
+        </member>
+        <member name="M:OpenWeatherMap.SearchClient.GetByCoordinates(OpenWeatherMap.Coordinates,OpenWeatherMap.MetricSystem,OpenWeatherMap.OpenWeatherMapLanguage,System.Nullable{System.Int32},System.Nullable{OpenWeatherMap.Accuracy})">
+            <summary>
+                Search by coordinates.
+            </summary>
+            <param name="coordinates">The coordinates.</param>
+            <param name="metric">     The metric.</param>
+            <param name="language">   The language.</param>
+            <param name="count">      The count.</param>
+            <param name="accuracy">   The accuracy.</param>
+            <returns>
+                Task {SearchResponse}.
+            </returns>
+            <seealso cref="M:OpenWeatherMap.ISearchClient.GetByCoordinates(Coordinates,MetricSystem,OpenWeatherMapLanguage,int?,Accuracy?)"/>
+        </member>
+        <member name="T:OpenWeatherMap.OpenWeatherMapException">
+            <summary>
+                Class OpenWeatherMapException.
+            </summary>
+            <seealso cref="T:System.Exception"/>
+        </member>
+        <member name="M:OpenWeatherMap.OpenWeatherMapException.#ctor(System.Net.HttpStatusCode)">
+            <summary>
+                Initializes a new instance of the <see cref="T:OpenWeatherMap.OpenWeatherMapException"/> class.
+            </summary>
+            <param name="status">The status.</param>
+        </member>
+        <member name="M:OpenWeatherMap.OpenWeatherMapException.#ctor(System.Net.Http.HttpResponseMessage)">
+            <summary>
+                Initializes a new instance of the <see cref="T:OpenWeatherMap.OpenWeatherMapException"/> class.
+            </summary>
+            <param name="response">The response.</param>
+        </member>
+        <member name="M:OpenWeatherMap.OpenWeatherMapException.#ctor(System.Exception)">
+            <summary>
+                Initializes a new instance of the <see cref="T:OpenWeatherMap.OpenWeatherMapException"/> class.
+            </summary>
+            <param name="ex">The ex.</param>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapException.Response">
+            <summary>
+                Gets the response message.
+            </summary>
+            <value>
+                The response.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapException.StatusCode">
+            <summary>
+                Gets the status code.
+            </summary>
+            <value>
+                The status code.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.DictionnaryExtensions">
+            <summary>
+                Class DictionnaryExtensions.
+            </summary>
+        </member>
+        <member name="M:OpenWeatherMap.DictionnaryExtensions.ToUrlParameters(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+                Transform the dictionnary into URL parameters.
+            </summary>
+            <param name="parameters">The parameters.</param>
+            <returns>
+                System.String.
+            </returns>
+        </member>
+        <member name="T:OpenWeatherMap.StringExtensions">
+            <summary>
+                Class StringExtensions.
+            </summary>
+        </member>
+        <member name="M:OpenWeatherMap.StringExtensions.UrlEncode(System.String)">
+            <summary>
+                encode string to be URL friendly.
+            </summary>
+            <param name="input">The input.</param>
+            <returns>
+                System.String.
+            </returns>
+        </member>
+        <member name="T:OpenWeatherMap.UriExtensions">
+            <summary>
+                Class UriExtensions.
+            </summary>
+        </member>
+        <member name="M:OpenWeatherMap.UriExtensions.AddSegment(System.Uri,System.String)">
+            <summary>
+                Adds the segment value to the url.
+            </summary>
+            <param name="originalUri">The original URI.</param>
+            <param name="segment">    The segment .</param>
+            <returns>
+                Uri .
+            </returns>
+        </member>
+        <member name="M:OpenWeatherMap.UriExtensions.AddQuery(System.Uri,System.String)">
+            <summary>
+                Adds the query value to the url.
+            </summary>
+            <param name="originalUri">The original URI.</param>
+            <param name="segment">    The segment.</param>
+            <returns>
+                Uri.
+            </returns>
+        </member>
+        <member name="T:OpenWeatherMap.Ensure">
+            <summary>
+                Class Ensure.
+            </summary>
+        </member>
+        <member name="M:OpenWeatherMap.Ensure.ArgumentNotNull(System.Object,System.String)">
+            <summary>
+                Ensure that the Argument value is not null.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+            <param name="value">The value.</param>
+            <param name="name"> The name.</param>
+        </member>
+        <member name="M:OpenWeatherMap.Ensure.ArgumentNotNullOrEmptyString(System.String,System.String)">
+            <summary>
+                Ensure that the string value is not null or empty .
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when one or more arguments have unsupported or
+                illegal values.</exception>
+            <param name="value">The value.</param>
+            <param name="name"> The name.</param>
+        </member>
+        <member name="T:OpenWeatherMap.IOpenWeatherMapRequest">
+            <summary>
+                Interface IOpenWeatherMapRequest.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.IOpenWeatherMapRequest.Uri">
+            <summary>
+                Gets or sets the URI.
+            </summary>
+            <value>
+                The URI.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.IOpenWeatherMapRequest.AppId">
+            <summary>
+                Gets or sets the application identifier.
+            </summary>
+            <value>
+                The application identifier.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.IOpenWeatherMapRequest.Parameters">
+            <summary>
+                Gets or sets the query string parameters.
+            </summary>
+            <value>
+                The parameters.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.IOpenWeatherMapRequest.HttpClient">
+            <summary>
+                Gets or sets the HTTP client.
+            </summary>
+            <value>
+                The HTTP client.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.IOpenWeatherMapRequest.Request">
+            <summary>
+                Gets or sets the request.
+            </summary>
+            <value>
+                The request.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.OpenWeatherMapRequest">
+            <summary>
+                Class OpenWeatherMapRequest.
+            </summary>
+            <seealso cref="T:OpenWeatherMap.IOpenWeatherMapRequest"/>
+        </member>
+        <member name="M:OpenWeatherMap.OpenWeatherMapRequest.#ctor(System.Uri,System.Net.Http.HttpClient,System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:OpenWeatherMap.OpenWeatherMapRequest"/> class.
+            </summary>
+            <param name="uri">       The URI.</param>
+            <param name="httpClient">The HTTP client.</param>
+            <param name="appId">     The application identifier.</param>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapRequest.Uri">
+            <summary>
+                Gets or sets the URI.
+            </summary>
+            <value>
+                The URI.
+            </value>
+            <seealso cref="P:OpenWeatherMap.IOpenWeatherMapRequest.Uri"/>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapRequest.AppId">
+            <summary>
+                Gets or sets the application identifier.
+            </summary>
+            <value>
+                The application identifier.
+            </value>
+            <seealso cref="P:OpenWeatherMap.IOpenWeatherMapRequest.AppId"/>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapRequest.Parameters">
+            <summary>
+                Gets or sets the querystring parameters.
+            </summary>
+            <value>
+                The parameters.
+            </value>
+            <seealso cref="P:OpenWeatherMap.IOpenWeatherMapRequest.Parameters"/>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapRequest.HttpClient">
+            <summary>
+                Gets or sets the HTTP client.
+            </summary>
+            <value>
+                The HTTP client.
+            </value>
+            <seealso cref="P:OpenWeatherMap.IOpenWeatherMapRequest.HttpClient"/>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapRequest.Request">
+            <summary>
+                Gets or sets the request.
+            </summary>
+            <value>
+                The request.
+            </value>
+            <seealso cref="P:OpenWeatherMap.IOpenWeatherMapRequest.Request"/>
+        </member>
+        <member name="T:OpenWeatherMap.IOpenWeatherMapClient">
+            <summary>
+                Interface IOpenWeatherMapClient.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.IOpenWeatherMapClient.AppId">
+            <summary>
+                Gets or sets the application identifier.
+            </summary>
+            <value>
+                The application identifier.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.IOpenWeatherMapClient.CurrentWeather">
+            <summary>
+                Gets the current weather client.
+            </summary>
+            <value>
+                The current weather.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.IOpenWeatherMapClient.Forecast">
+            <summary>
+                Gets the forecast client.
+            </summary>
+            <value>
+                The forecast.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.IOpenWeatherMapClient.Search">
+            <summary>
+                Gets the search client.
+            </summary>
+            <value>
+                The search.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.City">
+            <summary>
+                Class City.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.City.Id">
+            <summary>
+                Gets or sets the identifier.
+            </summary>
+            <value>
+                The identifier.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.City.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.City.Coordinates">
+            <summary>
+                Gets or sets the coordinates.
+            </summary>
+            <value>
+                The coordinates.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.City.Sun">
+            <summary>
+                Gets or sets the sun.
+            </summary>
+            <value>
+                The sun.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Clouds">
+            <summary>
+                Class Clouds.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Clouds.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Clouds.Name">
+            <summary>
+                Gets or sets the name (e.g. broken clouds).
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Coordinates">
+            <summary>
+                Class Coordinates.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Coordinates.Longitude">
+            <summary>
+                Gets or sets the longitude.
+            </summary>
+            <value>
+                The longitude.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Coordinates.Latitude">
+            <summary>
+                Gets or sets the latitude.
+            </summary>
+            <value>
+                The latitude.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Direction">
+            <summary>
+                Class Direction.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Direction.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Direction.Code">
+            <summary>
+                Gets or sets the code.
+            </summary>
+            <value>
+                The code.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Direction.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Humidity">
+            <summary>
+                Class Humidity.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Humidity.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Humidity.Unit">
+            <summary>
+                Gets or sets the unit.
+            </summary>
+            <value>
+                The unit.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.LastUpdate">
+            <summary>
+                Class LastUpdate.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.LastUpdate.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.MetricSystem">
+            <summary>
+                Enum MetricSystem.
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.MetricSystem.Internal">
+            <summary>
+                kelvin
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.MetricSystem.Metric">
+            <summary>
+                Celsius
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.MetricSystem.Imperial">
+            <summary>
+                Fahrenheit
+            </summary>
+        </member>
+        <member name="T:OpenWeatherMap.OpenWeatherMapLanguage">
+            <summary>
+                Enum OpenWeatherMapLanguage.
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.EN">
+            <summary>
+                English
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.RU">
+            <summary>
+                Russian
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.IT">
+            <summary>
+                Italian
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.SP">
+            <summary>
+                Spanish
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.UA">
+            <summary>
+                Ukrainian
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.DE">
+            <summary>
+                German
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.PT">
+            <summary>
+                Portuguese
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.RO">
+            <summary>
+                Romanian
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.PL">
+            <summary>
+                Polish
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.FI">
+            <summary>
+                Finnish
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.NL">
+            <summary>
+                Dutch
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.FR">
+            <summary>
+                French
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.BG">
+            <summary>
+                Bulgarian
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.SE">
+            <summary>
+                Swedish
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.ZH_TW">
+            <summary>
+                Chinese Traditional
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.ZH_CN">
+            <summary>
+                Chinese Simplified
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapLanguage.TR">
+            <summary>
+                Turkish
+            </summary>
+        </member>
+        <member name="T:OpenWeatherMap.Precipitation">
+            <summary>
+                Class Precipitation.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Precipitation.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Precipitation.Mode">
+            <summary>
+                Gets or sets the mode.
+            </summary>
+            <value>
+                The mode.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Precipitation.Unit">
+            <summary>
+                Gets or sets the unit.
+            </summary>
+            <value>
+                The unit.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Pressure">
+            <summary>
+                Class Pressure.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Pressure.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Pressure.Unit">
+            <summary>
+                Gets or sets the unit.
+            </summary>
+            <value>
+                The unit.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Speed">
+            <summary>
+                Class Speed.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Speed.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Speed.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Sun">
+            <summary>
+                Class Sun.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Sun.Rise">
+            <summary>
+                Gets or sets the sunrise time.
+            </summary>
+            <value>
+                The rise.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Sun.Set">
+            <summary>
+                Gets or sets the sunset time.
+            </summary>
+            <value>
+                The set.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Temperature">
+            <summary>
+                Class Temperature.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Temperature.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Temperature.Min">
+            <summary>
+                Gets or sets the minimum.
+            </summary>
+            <value>
+                The minimum.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Temperature.Max">
+            <summary>
+                Gets or sets the maximum.
+            </summary>
+            <value>
+                The maximum.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Temperature.Unit">
+            <summary>
+                Gets or sets the unit.
+            </summary>
+            <value>
+                The unit.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Weather">
+            <summary>
+                Class Weather.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Weather.Number">
+            <summary>
+                Gets or sets the number.
+            </summary>
+            <value>
+                The number.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Weather.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Weather.Icon">
+            <summary>
+                Gets or sets the icon filename without extension.
+            </summary>
+            <value>
+                The icon.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.WeatherItem">
+            <summary>
+                Class WeatherItem.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.WeatherItem.City">
+            <summary>
+                Gets or sets the city.
+            </summary>
+            <value>
+                The city.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.WeatherItem.Temperature">
+            <summary>
+                Gets or sets the temperature.
+            </summary>
+            <value>
+                The temperature.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.WeatherItem.Humidity">
+            <summary>
+                Gets or sets the humidity.
+            </summary>
+            <value>
+                The humidity.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.WeatherItem.Pressure">
+            <summary>
+                Gets or sets the pressure.
+            </summary>
+            <value>
+                The pressure.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.WeatherItem.Wind">
+            <summary>
+                Gets or sets the wind.
+            </summary>
+            <value>
+                The wind.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.WeatherItem.Clouds">
+            <summary>
+                Gets or sets the clouds.
+            </summary>
+            <value>
+                The clouds.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.WeatherItem.Precipitation">
+            <summary>
+                Gets or sets the precipitation.
+            </summary>
+            <value>
+                The precipitation.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.WeatherItem.Weather">
+            <summary>
+                Gets or sets the weather.
+            </summary>
+            <value>
+                The weather.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.WeatherItem.LastUpdate">
+            <summary>
+                Gets or sets the last update.
+            </summary>
+            <value>
+                The last update.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Wind">
+            <summary>
+                Class Wind.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Wind.Speed">
+            <summary>
+                Gets or sets the speed.
+            </summary>
+            <value>
+                The speed.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Wind.Direction">
+            <summary>
+                Gets or sets the direction.
+            </summary>
+            <value>
+                The direction.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.CurrentWeatherResponse">
+            <summary>
+                Class CurrentWeatherResponse.
+            </summary>
+            <seealso cref="T:OpenWeatherMap.WeatherItem"/>
+        </member>
+        <member name="T:OpenWeatherMap.CityLocation">
+            <summary>
+                Class CityLocation.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.CityLocation.Altitude">
+            <summary>
+                Gets or sets the altitude.
+            </summary>
+            <value>
+                The altitude.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.CityLocation.Latitude">
+            <summary>
+                Gets or sets the latitude.
+            </summary>
+            <value>
+                The latitude.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.CityLocation.Longitude">
+            <summary>
+                Gets or sets the longitude.
+            </summary>
+            <value>
+                The longitude.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.CityLocation.GeoBase">
+            <summary>
+                Gets or sets the geo base.
+            </summary>
+            <value>
+                The geo base.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.CityLocation.GeoBaseId">
+            <summary>
+                Gets or sets the geo base identifier.
+            </summary>
+            <value>
+                The geo base identifier.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.ForecastClouds">
+            <summary>
+                Class ForecastClouds.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastClouds.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastClouds.All">
+            <summary>
+                Gets or sets all value.
+            </summary>
+            <value>
+                All .
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastClouds.Unit">
+            <summary>
+                Gets or sets the unit.
+            </summary>
+            <value>
+                The unit.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.ForecastData">
+            <summary>
+                Class ForecastData.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastData.Location">
+            <summary>
+                Gets or sets the location.
+            </summary>
+            <value>
+                The location.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastData.Meta">
+            <summary>
+                Gets or sets the meta.
+            </summary>
+            <value>
+                The meta.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastData.Sun">
+            <summary>
+                Gets or sets the sun.
+            </summary>
+            <value>
+                The sun.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastData.Forecast">
+            <summary>
+                Gets or sets the forecast.
+            </summary>
+            <value>
+                The forecast.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.ForecastPrecipitation">
+            <summary>
+                Class ForecastPrecipitation.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastPrecipitation.Value">
+            <summary>
+                Gets or sets the value.
+            </summary>
+            <value>
+                The value.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastPrecipitation.Type">
+            <summary>
+                Gets or sets the type.
+            </summary>
+            <value>
+                The type.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastPrecipitation.Unit">
+            <summary>
+                Gets or sets the unit.
+            </summary>
+            <value>
+                The unit.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.ForecastResponse">
+            <summary>
+                Class ForecastResponse.
+            </summary>
+            <seealso cref="T:OpenWeatherMap.ForecastData"/>
+        </member>
+        <member name="T:OpenWeatherMap.ForecastTime">
+            <summary>
+                Class ForecastTime.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastTime.From">
+            <summary>
+                Gets or sets from.
+            </summary>
+            <value>
+                From.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastTime.To">
+            <summary>
+                Gets or sets to.
+            </summary>
+            <value>
+                To.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastTime.Day">
+            <summary>
+                Gets or sets the day.
+            </summary>
+            <value>
+                The day.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastTime.Symbol">
+            <summary>
+                Gets or sets the symbol.
+            </summary>
+            <value>
+                The symbol.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastTime.Precipitation">
+            <summary>
+                Gets or sets the precipitation.
+            </summary>
+            <value>
+                The precipitation.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastTime.WindDirection">
+            <summary>
+                Gets or sets the wind direction.
+            </summary>
+            <value>
+                The wind direction.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastTime.WindSpeed">
+            <summary>
+                Gets or sets the wind speed.
+            </summary>
+            <value>
+                The wind speed.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastTime.Temperature">
+            <summary>
+                Gets or sets the temperature.
+            </summary>
+            <value>
+                The temperature.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastTime.Pressure">
+            <summary>
+                Gets or sets the pressure.
+            </summary>
+            <value>
+                The pressure.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastTime.Humidity">
+            <summary>
+                Gets or sets the humidity.
+            </summary>
+            <value>
+                The humidity.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.ForecastTime.Clouds">
+            <summary>
+                Gets or sets the clouds.
+            </summary>
+            <value>
+                The clouds.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Location">
+            <summary>
+                Class Location.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Location.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Location.Type">
+            <summary>
+                Gets or sets the type.
+            </summary>
+            <value>
+                The type.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Location.Country">
+            <summary>
+                Gets or sets the country.
+            </summary>
+            <value>
+                The country.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Location.TimeZone">
+            <summary>
+                Gets or sets the time zone.
+            </summary>
+            <value>
+                The time zone.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Location.CityLocation">
+            <summary>
+                Gets or sets the city location.
+            </summary>
+            <value>
+                The city location.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Meta">
+            <summary>
+                Class Meta.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Meta.LastUpdate">
+            <summary>
+                Gets or sets the last update.
+            </summary>
+            <value>
+                The last update.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Meta.CalcTime">
+            <summary>
+                Gets or sets the calculation time.
+            </summary>
+            <value>
+                The calculation time.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Meta.NextUpdate">
+            <summary>
+                Gets or sets the next update.
+            </summary>
+            <value>
+                The next update.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Symbol">
+            <summary>
+                Class Symbol (weather detail).
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.Symbol.Number">
+            <summary>
+                Gets or sets the number.
+            </summary>
+            <value>
+                The number.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Symbol.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.Symbol.Var">
+            <summary>
+                Gets or sets the variable.
+            </summary>
+            <value>
+                The variable.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.WindDirection">
+            <summary>
+                Class WindDirection.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.WindDirection.Deg">
+            <summary>
+                Gets or sets the degrees.
+            </summary>
+            <value>
+                The deg.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.WindDirection.Code">
+            <summary>
+                Gets or sets the code.
+            </summary>
+            <value>
+                The code.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.WindDirection.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.WindSpeed">
+            <summary>
+                Class WindSpeed.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.WindSpeed.Mps">
+            <summary>
+                Gets or sets the speed (MPS).
+            </summary>
+            <value>
+                The MPS.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.WindSpeed.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>
+                The name.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.Accuracy">
+            <summary>
+                Enum Accuracy.
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.Accuracy.Like">
+            <summary>
+                like
+            </summary>
+        </member>
+        <member name="F:OpenWeatherMap.Accuracy.Accurate">
+            <summary>
+                accurate
+            </summary>
+        </member>
+        <member name="T:OpenWeatherMap.SearchResponse">
+            <summary>
+                Class SearchResponse.
+            </summary>
+            <seealso cref="T:OpenWeatherMap.SearchResult"/>
+        </member>
+        <member name="T:OpenWeatherMap.SearchResult">
+            <summary>
+                Class SearchResult.
+            </summary>
+        </member>
+        <member name="P:OpenWeatherMap.SearchResult.CalcTime">
+            <summary>
+                Gets or sets the calculation time.
+            </summary>
+            <value>
+                The calculation time.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.SearchResult.Count">
+            <summary>
+                Gets or sets the result count.
+            </summary>
+            <value>
+                The count.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.SearchResult.Mode">
+            <summary>
+                Gets or sets the mode.
+            </summary>
+            <value>
+                The mode.
+            </value>
+        </member>
+        <member name="P:OpenWeatherMap.SearchResult.List">
+            <summary>
+                Gets or sets the list.
+            </summary>
+            <value>
+                The list.
+            </value>
+        </member>
+        <member name="T:OpenWeatherMap.OpenWeatherMapClient">
+            <summary>
+                Class OpenWeatherMapClient.
+            </summary>
+            <seealso cref="T:OpenWeatherMap.IOpenWeatherMapClient"/>
+        </member>
+        <member name="F:OpenWeatherMap.OpenWeatherMapClient.OpenWeatherMapUrl">
+            <summary>
+                The open weather map URL.
+            </summary>
+        </member>
+        <member name="M:OpenWeatherMap.OpenWeatherMapClient.#ctor(System.String,System.Net.Http.HttpMessageHandler)">
+            <summary>
+                Initializes a new instance of the <see cref="T:OpenWeatherMap.OpenWeatherMapClient"/> class.
+            </summary>
+            <param name="appId">             The application identifier.</param>
+            <param name="httpMessageHandler">The HTTP message handler.</param>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapClient.AppId">
+            <summary>
+                Gets or sets the application identifier.
+            </summary>
+            <value>
+                The application identifier.
+            </value>
+            <seealso cref="P:OpenWeatherMap.IOpenWeatherMapClient.AppId"/>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapClient.CurrentWeather">
+            <summary>
+                Gets the current weather client.
+            </summary>
+            <value>
+                The current weather.
+            </value>
+            <seealso cref="P:OpenWeatherMap.IOpenWeatherMapClient.CurrentWeather"/>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapClient.Forecast">
+            <summary>
+                Gets the forecast client.
+            </summary>
+            <value>
+                The forecast.
+            </value>
+            <seealso cref="P:OpenWeatherMap.IOpenWeatherMapClient.Forecast"/>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapClient.Search">
+            <summary>
+                Gets the search client.
+            </summary>
+            <value>
+                The search.
+            </value>
+            <seealso cref="P:OpenWeatherMap.IOpenWeatherMapClient.Search"/>
+        </member>
+        <member name="P:OpenWeatherMap.OpenWeatherMapClient.HttpClient">
+            <summary>
+                Gets or sets the HTTP client.
+            </summary>
+            <value>
+                The HTTP client.
+            </value>
+        </member>
+    </members>
+</doc>
