@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,6 +57,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\EventToCommandAction.cs" />
     <Compile Include="BootstrapperBase.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Commands\DelegateCommandT.cs" />
@@ -78,6 +80,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Services\IDialogService.cs" />
+    <Compile Include="Services\Implementation\DialogService.cs" />
+    <Compile Include="Services\Implementation\WindowManager.cs" />
+    <Compile Include="Services\IWindowManager.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Compile Include="ViewModelResolver.cs" />
     <Compile Include="ViewResolver.cs" />

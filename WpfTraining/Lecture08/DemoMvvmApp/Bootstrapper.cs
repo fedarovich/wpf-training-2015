@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using System.Windows;
 using Autofac;
 using DemoMvvm;
 using DemoMvvm.Autofac;
+using DemoMvvm.Services.Implementation;
 using DemoMvvmApp.ViewModels;
 
 namespace DemoMvvmApp
@@ -29,6 +25,12 @@ namespace DemoMvvmApp
                 .AsImplementedInterfaces()
                 .SingleInstance();
             builder.RegisterType<EventAggregator>()
+                .AsImplementedInterfaces()
+                .SingleInstance();
+            builder.RegisterType<DialogService>()
+                .AsImplementedInterfaces()
+                .SingleInstance();
+            builder.RegisterType<WindowManager>()
                 .AsImplementedInterfaces()
                 .SingleInstance();
 
