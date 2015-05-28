@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "Lecture01\HelloWorld\HelloWorld.csproj", "{D099091E-37FF-468B-9B1C-CD29C25A0AE5}"
 EndProject
@@ -115,6 +115,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoMvvm.Autofac", "Lecture08\DemoMvvm.Autofac\DemoMvvm.Autofac.csproj", "{DE93A018-2D0D-4A2B-8F20-830C476EBBFD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather", "Lecture08\Weather\Weather.csproj", "{5D75967C-96D0-4FE9-9B83-9F6E4D2081A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lecture 09", "Lecture 09", "{6C582867-2382-44A7-93D9-62768DA285C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicroDemo", "Lecture09\CaliburnMicroDemo\CaliburnMicroDemo.csproj", "{15A057D9-7BA9-4DA1-9847-3A9BAA696669}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -298,6 +302,10 @@ Global
 		{5D75967C-96D0-4FE9-9B83-9F6E4D2081A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D75967C-96D0-4FE9-9B83-9F6E4D2081A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D75967C-96D0-4FE9-9B83-9F6E4D2081A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15A057D9-7BA9-4DA1-9847-3A9BAA696669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15A057D9-7BA9-4DA1-9847-3A9BAA696669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15A057D9-7BA9-4DA1-9847-3A9BAA696669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15A057D9-7BA9-4DA1-9847-3A9BAA696669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -347,5 +355,6 @@ Global
 		{1A9FD128-8C97-48F1-BAC6-4552C2FE35B6} = {2B76127B-F44F-4540-84E0-5B3F2955F9A9}
 		{DE93A018-2D0D-4A2B-8F20-830C476EBBFD} = {2B76127B-F44F-4540-84E0-5B3F2955F9A9}
 		{5D75967C-96D0-4FE9-9B83-9F6E4D2081A7} = {2B76127B-F44F-4540-84E0-5B3F2955F9A9}
+		{15A057D9-7BA9-4DA1-9847-3A9BAA696669} = {6C582867-2382-44A7-93D9-62768DA285C6}
 	EndGlobalSection
 EndGlobal
