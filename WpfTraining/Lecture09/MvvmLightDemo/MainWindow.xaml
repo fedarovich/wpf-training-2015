@@ -1,0 +1,69 @@
+﻿<Window x:Class="MvvmLightDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.ignore.com"
+        xmlns:mvvmLightDemo="clr-namespace:MvvmLightDemo"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+        xmlns:viewModel="clr-namespace:MvvmLightDemo.ViewModel"
+        mc:Ignorable="d ignore"
+        Height="300"
+        Width="300"
+        Title="MVVM Light Text Editor Demo"
+        d:DataContext="{d:DesignInstance Type=viewModel:MainViewModel, IsDesignTimeCreatable=False}"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <mvvm:EventToCommand PassEventArgsToCommand="True"
+                Command="{Binding ClosingCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New" Command="{Binding NewDocumentCommand}" />
+                <MenuItem Header="Open" Command="{Binding OpenDocumentCommand}" />
+                <MenuItem Header="Save" 
+                    Command="{Binding SelectedDocument.SaveCommand, FallbackValue={x:Static ApplicationCommands.NotACommand}}" />
+                <MenuItem Header="Save As..." 
+                    Command="{Binding SelectedDocument.SaveAsCommand, FallbackValue={x:Static ApplicationCommands.NotACommand}}" />
+                <Separator />
+                <MenuItem Header="Exit" >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <ei:CallMethodAction MethodName="Close" 
+                                TargetObject="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <TabControl ItemsSource="{Binding Documents}" 
+            SelectedItem="{Binding SelectedDocument}">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text="*" Visibility="{Binding HasChanges, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        <Button Content="&#x2716;" Padding="2,0" VerticalAlignment="Center" Margin="5,0,0,0" 
+                            Command="{Binding CloseCommand}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <mvvmLightDemo:DocumentView />
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+    </DockPanel>
+</Window>
