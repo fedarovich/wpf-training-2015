@@ -1,0 +1,10 @@
+﻿<modularity:ModuleCatalog xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:modularity="clr-namespace:Microsoft.Practices.Prism.Modularity;assembly=Microsoft.Practices.Prism.Composition">
+    <modularity:ModuleInfoGroup InitializationMode="WhenAvailable">
+        <modularity:ModuleInfo 
+            ModuleName="MainModule"
+            Ref="file://PrismDemo.exe"
+            ModuleType="PrismDemo.MainModule, PrismDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    </modularity:ModuleInfoGroup>
+</modularity:ModuleCatalog>
