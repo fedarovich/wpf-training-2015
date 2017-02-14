@@ -45,30 +45,6 @@ namespace DemoControls
                 new FrameworkPropertyMetadata(typeof(FieldsetGrid)));
         }
 
-        //protected override Size MeasureOverride(Size availableSize)
-        //{
-        //    int column = 0;
-        //    var sizes = new Size[ColumnCount];
-
-        //    foreach (UIElement child in InternalChildren)
-        //    {
-        //        child.Measure(availableSize);
-        //        var desiredSize = child.DesiredSize;
-
-        //        var size = sizes[column];
-        //        size = new Size(
-        //            Math.Max(size.Width, desiredSize.Width),
-        //            size.Height + desiredSize.Height);
-        //        sizes[column] = size;
-                
-        //        column = (column + 1) % ColumnCount;
-        //    }
-
-        //    return new Size(
-        //        sizes[0].Width + sizes[1].Width + HorizontalSpacing,
-        //        Math.Max(sizes[));
-        //}
-
         protected override Size MeasureOverride(Size availableSize)
         {
             double width = 0;
