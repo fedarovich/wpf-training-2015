@@ -1,0 +1,112 @@
+﻿<Window x:Class="BitmapScaling.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BitmapScaling"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="525"
+        UseLayoutRounding="True">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <TextBlock Text="Original" VerticalAlignment="Center" Margin="5" />
+            <Image Source="521580-64.png" VerticalAlignment="Center" Stretch="None" SnapsToDevicePixels="True"></Image>
+        </StackPanel>
+        <TabControl>
+            <TabControl.Resources>
+                <Style TargetType="Image">
+                    <Setter Property="Stretch" Value="Uniform" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="Source" Value="521580-64.png" />
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="Downsize">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="1">NearestNeighbor</Label>
+                    <Label Grid.Row="0" Grid.Column="2">Linear/LowQuality</Label>
+                    <Label Grid.Row="0" Grid.Column="3">Fant/HighQuality</Label>
+
+                    <Label Grid.Row="1" Grid.Column="0">75%</Label>
+                    <Image Grid.Row="1" Grid.Column="1" Width="48" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+                    <Image Grid.Row="1" Grid.Column="2" Width="48" RenderOptions.BitmapScalingMode="Linear" />
+                    <Image Grid.Row="1" Grid.Column="3" Width="48" RenderOptions.BitmapScalingMode="Fant" />
+
+                    <Label Grid.Row="2" Grid.Column="0">50%</Label>
+                    <Image Grid.Row="2" Grid.Column="1" Width="32" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+                    <Image Grid.Row="2" Grid.Column="2" Width="32" RenderOptions.BitmapScalingMode="Linear" />
+                    <Image Grid.Row="2" Grid.Column="3" Width="32" RenderOptions.BitmapScalingMode="Fant" />
+
+                    <Label Grid.Row="3" Grid.Column="0">33%</Label>
+                    <Image Grid.Row="3" Grid.Column="1" Width="21" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+                    <Image Grid.Row="3" Grid.Column="2" Width="21" RenderOptions.BitmapScalingMode="Linear" />
+                    <Image Grid.Row="3" Grid.Column="3" Width="21" RenderOptions.BitmapScalingMode="Fant" />
+
+                    <Label Grid.Row="4" Grid.Column="0">25%</Label>
+                    <Image Grid.Row="4" Grid.Column="1" Width="16" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+                    <Image Grid.Row="4" Grid.Column="2" Width="16" RenderOptions.BitmapScalingMode="Linear" />
+                    <Image Grid.Row="4" Grid.Column="3" Width="16" RenderOptions.BitmapScalingMode="Fant" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Upsize">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="1">NearestNeighbor</Label>
+                    <Label Grid.Row="0" Grid.Column="2">Linear/LowQuality</Label>
+                    <Label Grid.Row="0" Grid.Column="3">Fant/HighQuality</Label>
+
+                    <Label Grid.Row="1" Grid.Column="0">125%</Label>
+                    <Image Grid.Row="1" Grid.Column="1" Width="80" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+                    <Image Grid.Row="1" Grid.Column="2" Width="80" RenderOptions.BitmapScalingMode="Linear" />
+                    <Image Grid.Row="1" Grid.Column="3" Width="80" RenderOptions.BitmapScalingMode="Fant" />
+
+                    <Label Grid.Row="2" Grid.Column="0">133%</Label>
+                    <Image Grid.Row="2" Grid.Column="1" Width="85" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+                    <Image Grid.Row="2" Grid.Column="2" Width="85" RenderOptions.BitmapScalingMode="Linear" />
+                    <Image Grid.Row="2" Grid.Column="3" Width="85" RenderOptions.BitmapScalingMode="Fant" />
+
+                    <Label Grid.Row="3" Grid.Column="0">150%</Label>
+                    <Image Grid.Row="3" Grid.Column="1" Width="96" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+                    <Image Grid.Row="3" Grid.Column="2" Width="96" RenderOptions.BitmapScalingMode="Linear" />
+                    <Image Grid.Row="3" Grid.Column="3" Width="96" RenderOptions.BitmapScalingMode="Fant" />
+
+                    <Label Grid.Row="4" Grid.Column="0">200%</Label>
+                    <Image Grid.Row="4" Grid.Column="1" Width="128" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+                    <Image Grid.Row="4" Grid.Column="2" Width="128" RenderOptions.BitmapScalingMode="Linear" />
+                    <Image Grid.Row="4" Grid.Column="3" Width="128" RenderOptions.BitmapScalingMode="Fant" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
