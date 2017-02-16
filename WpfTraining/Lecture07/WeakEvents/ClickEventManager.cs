@@ -31,7 +31,7 @@ namespace WeakEvents
             if (listener == null)
                 throw new ArgumentNullException("listener");
 
-            CurrentManager.ProtectedAddListener(source, listener);
+            CurrentManager.ProtectedRemoveListener(source, listener);
         }
 
         protected override void StartListening(object source)
