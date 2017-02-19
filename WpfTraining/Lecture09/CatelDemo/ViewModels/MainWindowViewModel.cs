@@ -108,7 +108,7 @@ namespace CatelDemo.ViewModels
             }
             catch (Exception ex)
             {
-                messageService.ShowError(ex.Message);
+                messageService.ShowErrorAsync(ex.Message);
             }
         }
 
@@ -187,8 +187,8 @@ namespace CatelDemo.ViewModels
             bool close;
             if (viewModel.HasChanges)
             {
-                var configmationResult = await messageService.Show(
-                    string.Format("Do you want to save changes to the file \"{0}\"?", viewModel.Name),
+                var configmationResult = await messageService.ShowAsync(
+                    $"Do you want to save changes to the file \"{viewModel.Name}\"?",
                     "Confirmation",
                     MessageButton.YesNoCancel,
                     MessageImage.Question);
@@ -196,10 +196,10 @@ namespace CatelDemo.ViewModels
                 switch (configmationResult)
                 {
                     case MessageResult.Yes:
-                        close = await viewModel.SaveAndCloseViewModel();
+                        close = await viewModel.SaveAndCloseViewModelAsync();
                         break;
                     case MessageResult.No:
-                        close = await viewModel.CancelAndCloseViewModel();
+                        close = await viewModel.CancelAndCloseViewModelAsync();
                         break;
                     default:
                         close = false;
@@ -208,7 +208,7 @@ namespace CatelDemo.ViewModels
             }
             else
             {
-                close = await viewModel.CancelAndCloseViewModel();
+                close = await viewModel.CancelAndCloseViewModelAsync();
             }
 
             if (close)

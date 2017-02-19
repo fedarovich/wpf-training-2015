@@ -10,7 +10,7 @@ namespace CatelDemo.ViewModels
         {
             Copyright = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>().Copyright;
             Title = "About";
-            CloseCommand = new TaskCommand(CancelAndCloseViewModel);
+            CloseCommand = new TaskCommand(this.CancelAndCloseViewModelAsync);
         }
 
         public string Copyright { get; private set; }

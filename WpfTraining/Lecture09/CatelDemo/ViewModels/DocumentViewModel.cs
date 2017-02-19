@@ -31,7 +31,7 @@ namespace CatelDemo.ViewModels
             this.saveFileService = saveFileService;
             this.messageMediator = messageMediator;
 
-            SaveCommand = new TaskCommand(Save, () => HasChanges);
+            SaveCommand = new TaskCommand(SaveAsync, () => HasChanges);
             SaveAsCommand = new TaskCommand(SaveFileAs);
 
             if (string.IsNullOrWhiteSpace(path))
@@ -53,7 +53,7 @@ namespace CatelDemo.ViewModels
         /// Gets the title of the view model.
         /// </summary>
         /// <value>The title.</value>
-        public override string Title { get { return Name; } }
+        public override string Title => Name;
 
         #region Name property
 
@@ -142,7 +142,7 @@ namespace CatelDemo.ViewModels
 
         #endregion
 
-        protected async override Task<bool> Save()
+        protected override async Task<bool> SaveAsync()
         {
             string path = fullFileName;
             if (string.IsNullOrWhiteSpace(path))
@@ -181,7 +181,7 @@ namespace CatelDemo.ViewModels
             }
             catch (Exception ex)
             {
-                messageService.ShowError(ex.Message);
+                await messageService.ShowErrorAsync(ex.Message);
                 return false;
             }
         }
