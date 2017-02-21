@@ -108,7 +108,7 @@ namespace DemoMvvm
         {
             lock (handlers)
             {
-                return handlers.Any(handler => handler.Handles(messageType) & !handler.IsDead);
+                return handlers.Any(handler => handler.CanHandle(messageType) & !handler.IsDead);
             }
         }
 
@@ -165,7 +165,7 @@ namespace DemoMvvm
                 return true;
             }
 
-            public bool Handles(Type messageType)
+            public bool CanHandle(Type messageType)
             {
                 return supportedHandlers.Any(pair => pair.Key.IsAssignableFrom(messageType));
             }
