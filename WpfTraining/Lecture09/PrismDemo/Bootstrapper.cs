@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using Microsoft.Practices.Prism.Modularity;
-using Microsoft.Practices.Prism.Mvvm;
-using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.Unity;
+using Prism.Modularity;
+using Prism.Mvvm;
+using Prism.Unity;
 using PrismDemo.Services;
 using PrismDemo.Services.Implementation;
 using PrismDemo.Views;
@@ -18,7 +18,6 @@ namespace PrismDemo
     {
         public Bootstrapper() : base()
         {
-            
         }
 
         protected override DependencyObject CreateShell()
@@ -45,7 +44,7 @@ namespace PrismDemo
 
         protected override IModuleCatalog CreateModuleCatalog()
         {
-            return Microsoft.Practices.Prism.Modularity.ModuleCatalog.CreateFromXaml(
+            return Prism.Modularity.ModuleCatalog.CreateFromXaml(
                 new Uri("/ModuleCatalog.xaml", UriKind.Relative));
         }
     }

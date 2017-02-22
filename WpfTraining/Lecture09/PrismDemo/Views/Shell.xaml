@@ -3,11 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
-        xmlns:mvvm="clr-namespace:Microsoft.Practices.Prism.Mvvm;assembly=Microsoft.Practices.Prism.Mvvm.Desktop"
         xmlns:regions="http://www.codeplex.com/CompositeWPF"
         xmlns:local="clr-namespace:PrismDemo"
+        xmlns:prism="http://prismlibrary.com/"
         Title="Prism Text Editor Demo" Height="500" Width="600"
-        mvvm:ViewModelLocator.AutoWireViewModel="True" 
+        prism:ViewModelLocator.AutoWireViewModel="True" 
         Name="ShellWindow">
     
     <Window.Resources>
@@ -33,7 +33,7 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <TabControl regions:RegionManager.RegionName="{x:Static local:Regions.DocumentRegion}"
+        <TabControl prism:RegionManager.RegionName="{x:Static local:Regions.DocumentRegion}"
                     SelectedValuePath="DataContext" SelectedValue="{Binding SelectedDocument}">
             <TabControl.ItemTemplate>
                 <DataTemplate>

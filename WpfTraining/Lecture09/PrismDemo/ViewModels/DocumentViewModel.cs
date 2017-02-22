@@ -2,11 +2,11 @@
 using System.ComponentModel;
 using System.IO;
 using System.Text;
-using Microsoft.Practices.Prism;
-using Microsoft.Practices.Prism.Commands;
-using Microsoft.Practices.Prism.Mvvm;
-using Microsoft.Practices.Prism.PubSubEvents;
-using Microsoft.Practices.Prism.Regions;
+using Prism;
+using Prism.Commands;
+using Prism.Events;
+using Prism.Mvvm;
+using Prism.Regions;
 using PrismDemo.Events;
 using PrismDemo.Services;
 
