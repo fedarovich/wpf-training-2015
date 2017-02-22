@@ -1,4 +1,4 @@
-﻿using Microsoft.Practices.Prism.PubSubEvents;
+﻿using Prism.Events;
 using PrismDemo.ViewModels;
 
 namespace PrismDemo.Events

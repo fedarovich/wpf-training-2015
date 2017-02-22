@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
-using Microsoft.Practices.Prism.Commands;
-using Microsoft.Practices.Prism.Mvvm;
-using Microsoft.Practices.Prism.PubSubEvents;
-using Microsoft.Practices.Prism.Regions;
+using Prism.Commands;
+using Prism.Events;
+using Prism.Mvvm;
+using Prism.Regions;
 using PrismDemo.Events;
 using PrismDemo.Services;
 
@@ -78,7 +79,7 @@ namespace PrismDemo.ViewModels
         {
             IRegion region = regionManager.Regions[Regions.DocumentRegion];
             var view = region.Views
-                .Cast<IView>()
+                .Cast<FrameworkElement>()
                 .FirstOrDefault(x => Equals(x.DataContext, viewModel));
             if (view != null)
             {
